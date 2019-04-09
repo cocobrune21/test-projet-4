@@ -1,4 +1,7 @@
 <?php
+
+namespace model;
+
 function getEpisodes()
 {
     $db = dbConnect();

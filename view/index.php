@@ -15,6 +15,10 @@
 
 <body>
 
+    <?php
+    require 'vendor/autoload.php';
+    ?>
+
     <h1>Billet simple pour l'Alaska</h1>
 
 </body>

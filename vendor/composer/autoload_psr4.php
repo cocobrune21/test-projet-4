@@ -6,5 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Recovery\\' => array($baseDir . '/model'),
+    'Manage\\' => array($baseDir . '/controller'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );
