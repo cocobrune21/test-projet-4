@@ -29,62 +29,85 @@
     <!--  ?php
     require 'vendor/autoload.php';
 ?  -->
-
-    <header>
-        <h1>Billet simple pour l'Alaska</h1>
+    <header class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="mt-0 mb-3">Billet simple pour l'Alaska</h1>
+            <div class="breadcrumbs">
+                <p class="mb-0 text-white"><a class="text-white" href="#connect">Se connecter</a></p>
+            </div>
+        </div>
     </header>
 
+    <div class="container">
 
-    <div class="row container_chapter">
+        <div class="row container_chapter">
 
-        <div class="col-lg-8 chapter">
-            <h2 class="display-4">Ici le titre du chapitre</h2>
-            <hr class="my-4">
-            <p class="lead">Ici le texte </p>
-        </div>
-
-        <div class="card col-lg-3 login">
-            <div class="card-header">
-                <h3>Se connecter</h3>
+            <div class="col-lg-8 chapter">
+                <h2 class="display-4">Ici le titre du chapitre</h2>
+                <hr class="my-4">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="lead">Ici le texte</p>
             </div>
-            <div class="card-body">
-                <form>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+
+            <div class="card col-lg-3 login">
+                <div class="card-header">
+                    <h3 id="connect">Se connecter</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="pseudo">
                         </div>
-                        <input type="text" class="form-control" placeholder="pseudo">
-                    </div>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="mot de passe">
                         </div>
-                        <input type="password" class="form-control" placeholder="mot de passe">
+                        <div class="row align-items-center remember">
+                            <input type="checkbox">Se souvenir de moi
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Connexion" class="btn float-right login_btn">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        Vous n'avez pas de compte ?<a href="#">S'enregistrer</a>
                     </div>
-                    <div class="row align-items-center remember">
-                        <input type="checkbox">Se souvenir de moi
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Login" class="btn float-right login_btn">
-                    </div>
-                </form>
-            </div>
-            <div class="card-footer">
-                <div class="d-flex justify-content-center links">
-                    Vous n'avez pas de compte ?<a href="#">S'enregistrer</a>
                 </div>
             </div>
-        </div>
 
-    </div> <!-- End container_chapter -->
+        </div> <!-- End container_chapter -->
 
-    <div class="container_chat">
-        <div class="row chat-window col-xs-5 col-lg-3" id="chat_window_1">
-            <div class="col-xs-12 col-md-12">
+        <div class="container_chat">
+            <div class="row chat-window col-xs-5 col-lg-3" id="chat_window_1">
+
                 <div class="panel panel-default">
                     <div class="panel-heading top-bar">
                         <div class="col-md-8 col-xs-8">
-                            <h4 class="panel-title"><span class="glyphicon glyphicon-comment"></span>Café littéraire</h3>
+                            <h4 class="panel-title"><span class="glyphicon glyphicon-comment"></span>Café littéraire
+                                </h3>
                         </div>
                         <div class="col-md-4 col-xs-4">
                             <a href="#"><span id="minim_chat_window"
@@ -103,20 +126,19 @@
                                 </div>
                             </div>
                             <div class="col-md-2 col-xs-2 avatar">
-                                <img src="../public/images/TypewriterWithHands.jpg"
-                                    class=" img-responsive ">
+                                <img src="../public/images/TypewriterWithHands.jpg" class=" img-responsive ">
                             </div>
                         </div>
                         <div class="row msg_container base_receive">
                             <div class="col-md-2 col-xs-2 avatar">
-                                <img src="../public/images/Comment.jpg"
-                                    class=" img-responsive ">
+                                <img src="../public/images/Comment.jpg" class=" img-responsive ">
                             </div>
                             <div class="col-md-10 col-xs-10">
                                 <div class="messages msg_receive">
                                     <p>that mongodb thing looks good, huh?
                                         tiny master db, and huge document store</p>
                                     <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                    <a class="btn btn-danger btn-sm" href="#">Signaler</a>
                                 </div>
                             </div>
                         </div>
@@ -124,26 +146,26 @@
                     <div class="panel-footer">
                         <div class="input-group">
                             <input id="btn-input" type="text" class="form-control input-sm chat_input"
-                                placeholder="Write your message here..." />
+                                placeholder="Votre message ici..." />
                             <span class="input-group-btn">
-                                <button class="btn btn-primary btn-sm" id="btn-chat">Send</button>
+                                <button class="btn btn-primary" id="btn-chat">Envoyer</button>
                             </span>
                         </div>
                     </div>
                 </div>
+
             </div>
+
         </div>
 
-    </div>
 
+        <footer class="row">
+            <div class="col-lg-12">
+                Pied de page
+            </div>
+        </footer>
 
-    <footer class="row">
-        <div class="col-lg-12">
-            Pied de page
-        </div>
-    </footer>
-
-
+    </div> <!-- END DIV CONTAINER -->
 
     <!-- Bootstrap -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
