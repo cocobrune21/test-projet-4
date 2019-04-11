@@ -45,7 +45,7 @@
             <div class="col-lg-8 chapter">
                 <h2 class="display-4">Ici le titre du chapitre</h2>
                 <hr class="my-4">
-                <nav aria-label="Page navigation example">
+                <nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
                     <ul class="pagination">
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">

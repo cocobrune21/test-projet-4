@@ -11,7 +11,7 @@ header h1 {
     text-align: center;
     font-size: 10vw;
     text-shadow: 0 5px 5px white;
-    padding-top: 10vw;
+    padding-top: 4.5vw;
 }
 
 /* CHAPTER AND LOGIN */
@@ -41,6 +41,27 @@ header h1 {
 .my-4 {
     margin-left: 10vw;
     margin-right: 10vw;
+}
+
+.nav_chapter {
+    margin-left: 10vw;
+}
+
+.page-item > a {
+    color: #681700;
+}
+
+.page-item > a:hover {
+    background-color: #4e4a3f;
+    color: white;
+}
+
+.page-link {
+    border: none;
+    padding-top: 0.3rem;
+    padding-right: 0.55rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.55rem;
 }
 
 .lead {
@@ -116,6 +137,7 @@ input:focus {
 
 .container_chat{
     height:400px;
+    border-radius: .25rem;
 }
 
 .col-md-2, .col-md-10{
@@ -217,9 +239,21 @@ img {
     border-color: #FFC312;
 }
 
-.msg_sent > time{
-    float: right;
+.btn-primary:hover{
+    background-color: #681700;
+    border-color: #681700;
 }
+
+.btn-danger{
+    background-color:black;
+    border-color: black;
+}
+
+.btn-danger:hover {
+    background-color: #681700;
+    border-color: #681700;
+}
+
 
 .btn-group.dropup{
     position:fixed;
