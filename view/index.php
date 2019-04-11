@@ -41,8 +41,10 @@
     <div class="container">
 
         <div class="row container_chapter">
+            <!-- Start container_chapter -->
 
-            <div class="col-lg-8 chapter">
+            <div class="col-lg-12 chapter">
+                <!-- Start chapter -->
                 <h2 class="display-4">Ici le titre du chapitre</h2>
                 <hr class="my-4">
                 <nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
@@ -63,59 +65,21 @@
                     </ul>
                 </nav>
                 <p class="lead">Ici le texte</p>
-            </div>
-
-            <div class="card col-lg-3 login">
-                <div class="card-header">
-                    <h3 id="connect">Se connecter</h3>
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="pseudo">
-                        </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" class="form-control" placeholder="mot de passe">
-                        </div>
-                        <div class="row align-items-center remember">
-                            <input type="checkbox">Se souvenir de moi
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Connexion" class="btn float-right login_btn">
-                        </div>
-                    </form>
-                </div>
-                <div class="card-footer">
-                    <div class="d-flex justify-content-center links">
-                        Vous n'avez pas de compte ?<a href="#">S'enregistrer</a>
-                    </div>
-                </div>
-            </div>
+            </div> <!-- End chapter -->
 
         </div> <!-- End container_chapter -->
 
-        <div class="container_chat">
-            <div class="row chat-window col-xs-5 col-lg-3" id="chat_window_1">
-
+        <div class="container_chat_autor_login">
+            <!-- Start container_chat -->
+            <div class="row chat-window col-xs-12 col-lg-5" id="chat_window_1">
+                <!-- Start chat -->
                 <div class="panel panel-default">
                     <div class="panel-heading top-bar">
                         <div class="col-md-8 col-xs-8">
-                            <h4 class="panel-title"><span class="glyphicon glyphicon-comment"></span>Café littéraire
-                                </h3>
-                        </div>
-                        <div class="col-md-4 col-xs-4">
-                            <a href="#"><span id="minim_chat_window"
-                                    class="glyphicon glyphicon-minus icon_minim"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-remove icon_close"
-                                    data-id="chat_window_1"></span></a>
+                            <h3 class="panel-title">Café littéraire</h3>
                         </div>
                     </div>
+
                     <div class="panel-body msg_container_base">
                         <div class="row msg_container base_sent">
                             <div class="col-md-10 col-xs-10">
@@ -153,19 +117,66 @@
                         </div>
                     </div>
                 </div>
+            </div> <!-- End chat -->
 
-            </div>
+            <div class="card col-xs-12 col-lg-3 autor">
+                <!-- Start autor -->
+                <img src="../public/images/Autor.jpg" class="card-img-top" alt="Jean Forteroche">
+                <hr class="separate">
+                <div class="card-body">
+                    <h4>Jean Forteroche</h4>
+                    <p class="card-text">Acteur écrivain et aventurier, j'ai décider de mettre en ligne et
+                        de pulier les épisodes de prochain roman au fur et à mesure de leurs rédactions.
+                        Ce nouveau roman est un roman auto-biographique, qui a sa conclusion, je l'espère, sauvera le
+                        monde.
+                    </p>
+                </div>
+            </div> <!-- End autor -->
 
-        </div>
-
-
-        <footer class="row">
-            <div class="col-lg-12">
-                Pied de page
-            </div>
-        </footer>
+            <div class="card col-xs-12 col-lg-4 login">
+                <!-- Start login -->
+                <div class="card-header">
+                    <h5 id="connect">Se connecter</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="pseudo">
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="mot de passe">
+                        </div>
+                        <div class="row align-items-center remember">
+                            <input type="checkbox">Se souvenir de moi
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Connexion" class="btn float-right login_btn">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        Vous n'avez pas de compte ?<a href="#">S'enregistrer</a>
+                    </div>
+                </div>
+            </div> <!-- End login -->
+        </div> <!-- END CONTAINER CHAT AUTOR LOGIN -->
 
     </div> <!-- END DIV CONTAINER -->
+
+    <footer class="row">
+        <div class="col-lg-12 footer">
+            Pied de page
+        </div>
+    </footer>
+
+
 
     <!-- Bootstrap -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
