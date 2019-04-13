@@ -3,7 +3,8 @@
         "monolog/monolog": "1.0.*",
         "fzaninotto/faker": "^1.8",
         "twbs/bootstrap": "^4.3",
-        "tinymce/tinymce": "^5.0"
+        "tinymce/tinymce": "^5.0",
+        "mouf/nodejs-installer": "^1.0"
     },
 
     "autoload": {

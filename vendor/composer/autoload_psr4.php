@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Recovery\\' => array($baseDir . '/model'),
+    'Mouf\\NodeJsInstaller\\' => array($vendorDir . '/mouf/nodejs-installer/src'),
     'Manage\\' => array($baseDir . '/controller'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );
