@@ -236,14 +236,17 @@ img {
 
 /* AUTOR */
 
+div.card:nth-child(2) {
+    background-color: #ece1e1;
+}
+
 body>div>div.container_chat_autor_login>div.card.col-xs-12.col-lg-3.autor>img {
     height: 50%;
 }
 
 .separate {
-    font-size: 3em;
-    color: #FFC312;
-    background-color: #FFC312;
+    border: 7px solid #FFC312;
+    border-radius : 5px;
 }
 
 body>div>div.container_chat_autor_login>div:nth-child(2)>div {
