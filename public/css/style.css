@@ -25,11 +25,17 @@ body>header>div>div>p>a:hover {
     color: black;
 }
 
+
 /* CHAPTER */
+
+.container {
+    background-color: #ece1e1;
+}
 
 .container_chapter {
     margin-top: 3vw;
     height: 100%;
+    background-color: #ece1e1;
 }
 
 .chapter {
@@ -89,6 +95,7 @@ body>header>div>div>p>a:hover {
     margin-top: 3vw;
     display: flex;
     justify-content: space-around;
+    background-color: #ece1e1;
 }
 
 /* CHAT */
