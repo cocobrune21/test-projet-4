@@ -100,6 +100,10 @@ body>header>div>div>p>a:hover {
 
 /* CHAT */
 
+#chat_window_1 > div {
+    height: 400px;
+}
+
 .col-md-2,
 .col-md-10 {
     padding: 0;
@@ -124,6 +128,10 @@ body>header>div>div>p>a:hover {
     padding: 10px;
     position: relative;
     overflow: hidden;
+}
+
+#chat_window_1 > div > div.panel-heading.top-bar > div > h3 {
+    font-size: 0.95rem;
 }
 
 .msg_receive {
@@ -329,7 +337,7 @@ footer {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 760px) {
     .container_chat_autor_login {
         display: block;
         height: 100%;
