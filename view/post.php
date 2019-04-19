@@ -2,6 +2,6 @@
 
 require 'model.php';
 
-$req = getPosts();
+$posts = getPosts();
 
     require 'postView.php';
