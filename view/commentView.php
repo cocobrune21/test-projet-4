@@ -26,12 +26,6 @@
 </head>
 
 <body>
-    <!--  ?php
-    require 'vendor/autoload.php';
-?  -->
-    <?php
-    while ($episodes = $req->fetch()) {
-        ?>
 
     <header class="row">
         <div class="col-md-12 text-center">
@@ -84,6 +78,9 @@
                         </div>
                     </div>
 
+                    <?php
+        while ($comment = $comments->fetch()) {
+            ?>
                     <div class="panel-body msg_container_base">
                         <div class="row msg_container base_sent">
                             <div class="col-md-10 col-xs-10">
@@ -182,7 +179,7 @@
     </footer>
 
     <?php
-    }
+        }
     $req->closeCursor();
     ?>
 

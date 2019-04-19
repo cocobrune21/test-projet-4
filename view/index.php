@@ -3,7 +3,6 @@
 
 require 'model.php';
 
-$req = getChapter();
-$postComment = getPost();
+$req = getChapters();
 
     require 'indexView.php';
