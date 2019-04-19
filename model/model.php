@@ -8,12 +8,12 @@ function getChapters()
     return $req;
 }
 
-function getPosts()
+function getPostsVisitors()
 {
     $db = dbConnect();
-    $post = $db->query('SELECT id, autor, post, DATE_FORMAT(date_post, \'%d/%m/%Y à %Hh%imin%ss\') AS date_post_fr FROM posts ORDER BY date_post DESC  LIMIT 0, 4');
+    $postsVisitors = $db->query('SELECT id, autor, post, DATE_FORMAT(date_post, \'%d/%m/%Y à %Hh%imin%ss\') AS date_post_fr FROM posts ORDER BY date_post DESC  LIMIT 0, 4');
 
-    return $posts;
+    return $postsVisitors;
 }
 
 function getPost($postId)

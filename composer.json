@@ -9,8 +9,6 @@
 
     "autoload": {
         "psr-4": {
-            "Manage\\": "controller",
-            "Recovery\\": "model"
         }
     }
 }

@@ -21,7 +21,7 @@
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <title>Billet simple pour l'Alaska</title>
-    <link href="../public/css/style.css" rel="stylesheet" />
+    <link href="public/css/style.css" rel="stylesheet" />
 
 </head>
 
@@ -62,13 +62,13 @@
                                 </div>
                             </div>
                             <div class="col-md-2 col-xs-2 avatar">
-                                <img src="../public/images/TypewriterWithHands.jpg" class=" img-responsive ">
+                                <img src="public/images/TypewriterWithHands.jpg" class=" img-responsive ">
                             </div>
                         </div>
 
                         <div class="row msg_container base_receive">
                             <div class="col-md-2 col-xs-2 avatar">
-                                <img src="../public/images/Comment.jpg" class=" img-responsive ">
+                                <img src="public/images/Comment.jpg" class=" img-responsive ">
                             </div>
                             <div class="col-md-10 col-xs-10">
                                 <div class="messages msg_receive">
@@ -92,7 +92,7 @@
 
             <div class="card col-xs-12 col-lg-3 autor">
                 <!-- Start autor -->
-                <img src="../public/images/Autor.jpg" class="card-img-top" alt="Jean Forteroche">
+                <img src="public/images/Autor.jpg" class="card-img-top" alt="Jean Forteroche">
                 <hr class="separate">
                 <div class="card-body">
                     <h4>Jean Forteroche</h4>
