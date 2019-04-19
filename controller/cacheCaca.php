@@ -25,3 +25,5 @@ function listPost()
 
     require 'view/frontend/postView.php';
 }
+
+/*dessus controller*/

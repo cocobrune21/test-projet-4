@@ -6,7 +6,7 @@ while ($comment = $comments->fetch())
 ?>
 
     <p><?= nl2br(htmlspecialchars($comment['content'])); ?></p>
-    <time datetime="2009-11-13T20:00"><?= htmlspecialchars($comment['autor']); ?>•
+    <time><?= htmlspecialchars($comment['autor']); ?>•
         <?= $comment['date_comment_fr']; ?></time>
 
 <?php

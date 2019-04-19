@@ -80,7 +80,7 @@
                     </div>
                     <div class="panel-footer">
                         <div class="input-group">
-                            <input id="btn-input" type="text" class="form-control input-sm chat_input"
+                            <input type="text" class="form-control input-sm chat_input"
                                 placeholder="Votre message ici..." />
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" id="btn-chat">Envoyer</button>
