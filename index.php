@@ -1,9 +1,11 @@
 
 <?php
 
-require('controller/controller.php');
+require_once('controller/controller.php');
 
-require('view/frontend/template.php');
+frontView();
+
+
 
 
 

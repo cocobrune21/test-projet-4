@@ -2,26 +2,13 @@
 
 require_once('model/FrontModel.php');
 
-function listChapter()
+function frontView()
 {
     $frontModel = new FrontModel();
     $req = $frontModel-> getChapters();
+    $comments = $frontModel-> getCommentsAutor();
+    $postsVisitors = $frontModel-> getPostsVisitors();
 
     require 'view/frontend/chapterView.php';
 }
 
-function listComment()
-{
-    $frontModel = new FrontModel();
-    $comments = $frontModel-> getCommentsAutor();
- 
-    require 'view/frontend/commentView.php';
-}
-
-function listPost()
-{
-    $frontModel = new FrontModel();
-    $postsVisitors = $frontModel-> getPostsVisitors();
-
-    require 'view/frontend/postView.php';
-}
