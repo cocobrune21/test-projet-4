@@ -9,6 +9,6 @@ function frontView()
     $comments = $frontModel-> getCommentsAutor();
     $postsVisitors = $frontModel-> getPostsVisitors();
 
-    require 'view/frontend/chapterView.php';
+    require 'view/frontend/indexView.php';
 }
 
