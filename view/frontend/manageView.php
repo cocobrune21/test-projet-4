@@ -1,42 +1,12 @@
 <?php ob_start(); ?>
 
     <div class="container">
-
-        <div class="row container_chapter">
-            <!-- Start container_chapter -->
-            <?php
-    while ($episodes = $req->fetch()) {
-        ?>
-
-            <div class="col-lg-12 chapter">
-                <!-- Start chapter -->
-                <h2 class="display-4"><?= htmlspecialchars($episodes['title']); ?></h2>
-                <hr class="my-4">
-                <nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="lead"><?= nl2br(htmlspecialchars($episodes['script'])); ?></p>
-            </div> <!-- End chapter -->
-
-            <?php
-    }
-    $req->closeCursor();
-    ?>
-        </div> <!-- End container_chapter -->
+     
+    <div id="manage">
+    <h1>Heureux de vous revoir Jean</h1>
+    <p><strong>Quoi de neuf aujourd'hui ?</strong></p>  
+    </div>
+        
 
         <div class="container_chat_autor_login">
             <!-- Start container_chat -->
@@ -129,18 +99,18 @@ $postsVisitors->closeCursor();
                     <h5 id="connect">Se connecter</h5>
                 </div>
                 <div class="card-body">
-                    <form action="log.php" method="post">
+                    <form>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" name="identity" placeholder="pseudo">
+                            <input type="text" class="form-control" placeholder="pseudo">
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" name="password"  placeholder="mot de passe">
+                            <input type="password" class="form-control" placeholder="mot de passe">
                         </div>
                         <div class="row align-items-center remember">
                             <input type="checkbox">Se souvenir de moi
@@ -152,7 +122,7 @@ $postsVisitors->closeCursor();
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Vous n'avez pas de compte ?<a href="inscriptionView.php">S'enregistrer</a>
+                        Vous n'avez pas de compte ?<a href="#">S'enregistrer</a>
                     </div>
                 </div>
             </div> <!-- End login -->

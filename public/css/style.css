@@ -338,6 +338,12 @@ footer {
     text-align: center;
 }
 
+/* PART MANAGE VIEW */
+
+#manage {
+    background-image: url('../images/Typewriter.jpg'); 
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 760px) {
