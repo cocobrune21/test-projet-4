@@ -1,6 +1,9 @@
 <?php
 
-class Chapter {
+require_once("model/Manage.php");
+
+class Chapter extends Manage
+{
 
     public function getChapters()
     {
@@ -19,6 +22,27 @@ class Chapter {
 
     return $episode;
     }
+  
+    public function postChapter($episodeId, $title, $script)
+    {
+    $db = $this->dbConnect();
+    $req = $db->prepare('INSERT INTO episodes(title, script) VALUES (?, ?');
+    $addChapter = $req->execute(array($episodeId, $_POST['title'], $_POST['script']));
+   
+    return $addChapter;
+    }
+
+    public function updateChapter($title, $script)
+    {
+    $db = $this->dbConnect();
+    $req = $db->prepare('UPDATE episodes SET script = :newScript WHERE title = :newTitle');
+    $updateChapter = $req->execute(array(
+        'newScript' => $_POST['script'],
+        'newtitle' => $_POST['title']
+    ));
+   
+    return $updateChapter;
+    }
 
     public function getCommentChapter($episodeId)
     {
@@ -28,18 +52,5 @@ class Chapter {
 
     return $commentVisitors;
     }
-
-    /*ajouter un constructeur et une fonction destructrice*/
-    private function dbConnect()
-    {
-        try {
-            $db = new PDO('mysql:host=localhost;dbname=projet_4;charset=utf8', 'root', '');
-    
-            return $db;
-        } catch (Exception $e) {
-            die('Erreur : '.$e->getMessage());
-        }
-    }
-
 
 }

@@ -1,16 +1,25 @@
 <?php
 
-require_once('model/FrontModel.php');
 require_once('model/Chapter.php');
 require_once('model/Post.php');
 
 function frontView()
 {
-    $frontModel = new FrontModel();
-    $req = $frontModel-> getChapters();
-    $comments = $frontModel-> getCommentsAutor();
-    $postsVisitors = $frontModel-> getPostsVisitors();
+    $frontChapter = new Chapter();
+    $req = $frontChapter-> getChapters();
+    $comments = $frontChapter-> getCommentChapter();
+
+    $frontPost = new Post();
+    $postsVisitors = $frontPost-> getPostsVisitors();
 
     require 'view/frontend/indexView.php';
 }
 
+function manageAutor()
+{
+    $manageChapter = new Chapter();
+    $addChapter = $manageChapter-> postChapter();
+    $updateChapter = $manageChapter-> updateChapter();
+
+    require 'view/frontend/manageView.php';
+}

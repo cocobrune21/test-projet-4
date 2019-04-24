@@ -1,6 +1,8 @@
 <?php 
 
-class Post
+require_once("model/Manage.php");
+
+class Post extends Manage
 {
     public function getPostsVisitors()
     {
@@ -20,19 +22,22 @@ class Post
         return $post;
     }
 
-    /*Ajouter fonction pour ajouter un post et une pour supprimer */
-    /*Ou alors voir pour faire un constructeur de post et lui attribuer des méthodes*/
+   public function postPostVisitor($postId, $autor, $post) 
+   {
+        $db = $this->dbConnect();
+        $req = $db->prepare('INSERT INTO posts(id_post, autor, post, date_post) VALUES (?, ?, ?, NOW())');
+        $addPost = $req->execute(array($postId, $_POST['identity'], $_POST['message']));
+   
+        return $addPost;
+    }
 
-
-    private function dbConnect()
+    public function delatePostVisitor($postId) 
     {
-        try {
-            $db = new PDO('mysql:host=localhost;dbname=projet_4;charset=utf8', 'root', '');
-    
-            return $db;
-        } catch (Exception $e) {
-            die('Erreur : '.$e->getMessage());
-        }
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM posts WHERE (id_post, autor, post, date_post)');
+        $delatePost = $req->execute(array($postId, $autor, $post,$date_post));
+   
+        return $delatePost;
     }
 
 }
