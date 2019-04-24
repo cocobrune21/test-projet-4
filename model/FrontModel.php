@@ -1,6 +1,8 @@
 <?php
 
-class FrontModel
+require_once("model/Manager.php");
+
+class FrontModel extends Manager
 { 
 
     public function getChapters()
@@ -27,14 +29,4 @@ class FrontModel
     return $comments;
 }
 
-    private function dbConnect()
-{
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=projet_4;charset=utf8', 'root', '');
-
-        return $db;
-    } catch (Exception $e) {
-        die('Erreur : '.$e->getMessage());
-    }
-}
 }
