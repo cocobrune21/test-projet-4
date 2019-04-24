@@ -1,7 +1,8 @@
 <?php
 
 require_once('model/FrontModel.php');
-
+require_once('model/Chapter.php');
+require_once('model/Post.php');
 
 function frontView()
 {
