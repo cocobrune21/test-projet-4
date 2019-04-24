@@ -1,4 +1,7 @@
 <?php ob_start(); ?>
+<?php
+$identity = $_COOKIE['identity'];
+$password = $_COOKIE['password'];
 
     <div class="container">
 

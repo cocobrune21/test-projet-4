@@ -22,7 +22,7 @@
 if(isset($_POST['identity']) AND isset($_POST['message']))
 {
     $db = $db = new PDO('mysql:host=localhost;dbname=projet_4;charset=utf8', 'root', '');
-    $req = $db->prepare('INSERT INTO (autor, post) VALUES (?, ?)');
+    $req = $db->prepare('INSERT INTO posts(autor, post) VALUES (?, ?)');
     $req->execute(array($_POST['identity'], $_POST['message']));
 }
 
