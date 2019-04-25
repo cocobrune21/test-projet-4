@@ -6,12 +6,12 @@
         <div class="row container_chapter">
             <!-- Start container_chapter -->
             <?php
-    while ($episodes = $req->fetch()) {
+    while ($chapter = $req->fetch()) {
         ?>
 
             <div class="col-lg-12 chapter">
                 <!-- Start chapter -->
-                <h2 class="display-4"><?= htmlspecialchars($episodes['title']); ?></h2>
+                <h2 class="display-4"><?= htmlspecialchars($chapter['title']); ?></h2>
                 <hr class="my-4">
                 <nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
                     <ul class="pagination">
@@ -30,10 +30,10 @@
                         </li>
                     </ul>
                 </nav>
-                <p class="lead"><?= nl2br(htmlspecialchars($episodes['script'])); ?></p>
+                <p class="lead"><?= nl2br(htmlspecialchars($chapter['script'])); ?></p>
             </div> <!-- End chapter -->
 
-            <?php
+    <?php
     }
     $req->closeCursor();
     ?>
@@ -55,16 +55,16 @@
                             <div class="col-md-10 col-xs-10">
                                 <div class="messages msg_sent">
                                     <?php
-while ($comment = $comments->fetch()) {
+while ($comments = $comment->fetch()) {
         ?>
 
-                                    <p><?= nl2br(htmlspecialchars($comment['content'])); ?></p>
-                                    <time><?= htmlspecialchars($comment['autor']); ?>•
-                                        <?= $comment['date_comment_fr']; ?></time>
+                                    <p><?= nl2br(htmlspecialchars($comments['content'])); ?></p>
+                                    <time><?= htmlspecialchars($comments['autor']); ?>•
+                                        <?= $comments['date_comment_fr']; ?></time>
 
                                     <?php
     }
-$comments->closeCursor();
+$comment->closeCursor();
 ?>
 
                                 </div>
@@ -81,16 +81,16 @@ $comments->closeCursor();
                             <div class="col-md-10 col-xs-10">
                                 <div class="messages msg_receive">
                                     <?php
-while ($postVisitor = $postsVisitors->fetch()) {
+while ($comments = $comment->fetch()) {
     ?>
 
-                                    <p><?= nl2br(htmlspecialchars($postVisitor['post'])); ?></p>
-                                    <time><?= htmlspecialchars($postVisitor['autor']); ?>•
-                                        <?= $postVisitor['date_post_fr']; ?></time>
+                                    <p><?= nl2br(htmlspecialchars($comments['content'])); ?></p>
+                                    <time><?= htmlspecialchars($comments['autor']); ?>•
+                                        <?= $comments['date_comment_fr']; ?></time>
 
                                     <?php
 }
-$postsVisitors->closeCursor();
+$comment->closeCursor();
 ?>
 
                                     <a class="btn btn-danger btn-sm" href="#">Signaler</a>
@@ -100,11 +100,13 @@ $postsVisitors->closeCursor();
                     </div>
                     <div class="panel-footer">
                         <div class="input-group">
-                            <input type="text" class="form-control input-sm chat_input"
+                        <form action="index.php?action=addComment&amp;id=<?= $post['id']; ?>" method="post">
+                            <input type="text" id="content" name="content" class="form-control input-sm chat_input"
                                 placeholder="Votre message ici..." />
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" id="btn-chat">Envoyer</button>
                             </span>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -130,12 +132,12 @@ $postsVisitors->closeCursor();
                     <h5 id="connect">Se connecter</h5>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="index.php?action=addComment&amp;id=<?= $post['id']; ?>" method="post">
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" name="identity" placeholder="pseudo">
+                            <input type="text" class="form-control" id="autor" name="autor" placeholder="pseudo">
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">

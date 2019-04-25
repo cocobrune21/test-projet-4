@@ -9,11 +9,12 @@ require_once 'model/Comment.php';
 function frontView()
 {
     $frontChapter = new Chapter();
-    $req = $frontChapter->getChapters();
-    /*$comments = $frontChapter->getCommentChapter();*/
-
     $frontComment = new Comment();
-    $postsVisitors = $frontComment->getPostsVisitors();
+
+    $req = $frontChapter->getChapters();
+    $post = $frontChapter->getChapter($_GET['id']);
+
+    $comment = $frontComment->getCommentChapter($_GET['id']);
 
     require 'view/frontend/indexView.php';
 }
@@ -21,8 +22,22 @@ function frontView()
 function manageAutor()
 {
     $manageChapter = new Chapter();
+
     $addChapter = $manageChapter->postChapter();
     $updateChapter = $manageChapter->updateChapter();
 
     require 'view/frontend/manageView.php';
+}
+
+function addComment($postId, $autor, $content)
+{
+    $commentManager = new Comment();
+
+    $addComment = $commentManager->addComment($postId, $autor, $content);
+
+    if ($addComment === false) {
+        throw new Exception('Impossible d\'ajouter le commentaire !');
+    } else {
+        header('Location: index.php?action=post&id='.$postId);
+    }
 }

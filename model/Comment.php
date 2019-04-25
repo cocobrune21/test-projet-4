@@ -6,38 +6,29 @@ require_once 'model/Manage.php';
 
 class Comment extends Manage
 {
-    public function getComment()
+    public function getCommentChapter($postId)
     {
         $db = $this->dbConnect();
-        $comment = $db->query('SELECT id, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr FROM comments ORDER BY date_comment DESC  LIMIT 1');
+        $comment = $db->prepare('SELECT id, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr FROM comments WHERE id = ? ORDER BY date_comment DESC');
+        $comment->execute(array($postId));
 
         return $comment;
     }
 
-    public function getCommentChapter($commentId)
+    public function postComment($postId, $autor, $content)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr FROM comments WHERE id = ?');
-        $req->execute(array($commentId));
-        $commentChapter = $req->fetch();
-
-        return $commentChapter;
-    }
-
-    public function postComment($commentId, $autor, $content)
-    {
-        $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO comments(id_comment, autor, content, date_comment) VALUES (?, ?, ?, NOW())');
-        $addComment = $req->execute(array($commentId, $_POST['identity'], $_POST['message']));
+        $comment = $db->prepare('INSERT INTO comments(id_comment, autor, content, date_comment) VALUES (?, ?, ?, NOW())');
+        $addComment = $comment->execute(array($postId, $autor, $content));
 
         return $addComment;
     }
 
-    public function delateComment($commentId)
+    public function delateComment($postId)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('DELETE FROM comments WHERE (id_comment, autor, content, date_comment)');
-        $delateComment = $req->execute(array($commentId, $autor, $content, $date_comment));
+        $delateComment = $req->execute(array($postId, $autor, $content, $date_comment));
 
         return $delateComment;
     }
