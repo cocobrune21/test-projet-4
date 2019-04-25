@@ -1,10 +1,10 @@
 <?php
 
 use P4\Model\Chapter;
-use P4\Model\Post;
+use P4\Model\Comment;
 
 require_once 'model/Chapter.php';
-require_once 'model/Post.php';
+require_once 'model/Comment.php';
 
 function frontView()
 {
@@ -12,8 +12,8 @@ function frontView()
     $req = $frontChapter->getChapters();
     /*$comments = $frontChapter->getCommentChapter();*/
 
-    $frontPost = new Post();
-    $postsVisitors = $frontPost->getPostsVisitors();
+    $frontComment = new Comment();
+    $postsVisitors = $frontComment->getPostsVisitors();
 
     require 'view/frontend/indexView.php';
 }
