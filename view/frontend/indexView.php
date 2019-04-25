@@ -1,7 +1,5 @@
 <?php ob_start(); ?>
-<?php
-$identity = $_COOKIE['identity'];
-$password = $_COOKIE['password'];
+
 
     <div class="container">
 
@@ -132,7 +130,7 @@ $postsVisitors->closeCursor();
                     <h5 id="connect">Se connecter</h5>
                 </div>
                 <div class="card-body">
-                    <form action="log.php" method="post">
+                    <form>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>

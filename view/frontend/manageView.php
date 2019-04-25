@@ -79,54 +79,7 @@ $postsVisitors->closeCursor();
                 </div>
             </div> <!-- End chat -->
 
-            <div class="card col-xs-12 col-lg-3 autor">
-                <!-- Start autor -->
-                <img src="public/images/Autor.jpg" class="card-img-top" alt="Jean Forteroche">
-                <hr class="separate">
-                <div class="card-body">
-                    <h4>Jean Forteroche</h4>
-                    <p class="card-text">Acteur écrivain et aventurier, j'ai décider de mettre en ligne et
-                        de pulier les épisodes de prochain roman au fur et à mesure de leurs rédactions.
-                        Ce nouveau roman est un roman auto-biographique, qui a sa conclusion, je l'espère, sauvera le
-                        monde.
-                    </p>
-                </div>
-            </div> <!-- End autor -->
-
-            <div class="card col-xs-12 col-lg-4 login">
-                <!-- Start login -->
-                <div class="card-header">
-                    <h5 id="connect">Se connecter</h5>
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="pseudo">
-                        </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" class="form-control" placeholder="mot de passe">
-                        </div>
-                        <div class="row align-items-center remember">
-                            <input type="checkbox">Se souvenir de moi
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Connexion" class="btn float-right login_btn">
-                        </div>
-                    </form>
-                </div>
-                <div class="card-footer">
-                    <div class="d-flex justify-content-center links">
-                        Vous n'avez pas de compte ?<a href="#">S'enregistrer</a>
-                    </div>
-                </div>
-            </div> <!-- End login -->
-        </div> <!-- END CONTAINER CHAT AUTOR LOGIN -->
+           
 
     </div> <!-- END DIV CONTAINER -->
 

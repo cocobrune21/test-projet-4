@@ -1,5 +1,7 @@
 <?php 
 
+namespace P4\Model;
+
 require_once("model/Manage.php");
 
 class Post extends Manage

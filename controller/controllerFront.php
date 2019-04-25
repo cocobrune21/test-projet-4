@@ -1,16 +1,19 @@
 <?php
 
-require_once('model/Chapter.php');
-require_once('model/Post.php');
+use P4\Model\Chapter;
+use P4\Model\Post;
+
+require_once 'model/Chapter.php';
+require_once 'model/Post.php';
 
 function frontView()
 {
     $frontChapter = new Chapter();
-    $req = $frontChapter-> getChapters();
-    $comments = $frontChapter-> getCommentChapter();
+    $req = $frontChapter->getChapters();
+    /*$comments = $frontChapter->getCommentChapter();*/
 
     $frontPost = new Post();
-    $postsVisitors = $frontPost-> getPostsVisitors();
+    $postsVisitors = $frontPost->getPostsVisitors();
 
     require 'view/frontend/indexView.php';
 }
@@ -18,8 +21,8 @@ function frontView()
 function manageAutor()
 {
     $manageChapter = new Chapter();
-    $addChapter = $manageChapter-> postChapter();
-    $updateChapter = $manageChapter-> updateChapter();
+    $addChapter = $manageChapter->postChapter();
+    $updateChapter = $manageChapter->updateChapter();
 
     require 'view/frontend/manageView.php';
 }
