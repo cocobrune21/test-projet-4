@@ -26,24 +26,18 @@
 </head>
 
 <body>
-
-    <header class="row">
-        <div class="col-md-12 text-center">
-            <h1 class="mt-0 mb-3">Billet simple pour l'Alaska</h1>
-            <div class="breadcrumbs">
-                <p class="mb-0 text-white"><a class="text-white" href="#connect">Se connecter</a></p>
-            </div>
-        </div>
-    </header>
-
-  <?= $content ?>
-
-    <footer class="row">
+   <div class="container">
+  <?= $header; ?>
+  <?= $contentChapter; ?>
+  <?= $contentChat; ?>
+  <?= $contentAutor; ?>
+  <?= $contentLogin; ?>
+     <footer class="row.fluid">
         <div class="col-lg-12 footer">
             Pied de page
         </div>
     </footer>
-
+   </div> <!-- END DIV CONTAINER -->
 
     <!-- Bootstrap -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
