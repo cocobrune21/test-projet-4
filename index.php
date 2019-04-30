@@ -9,7 +9,7 @@ try {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 frontView();
             } else {
-                throw new Exception('Aucun identifiant de billet envoyé');
+                throw new Exception('Aucun identifiant de chapitre envoyé');
             }
         } elseif ($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
@@ -23,6 +23,12 @@ try {
             }
         } elseif ($_GET['action'] == 'manageAutor') {
             manageAutor();
+        } elseif ($_GET['action'] == 'chapterView') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                chapterView();
+            } else {
+                throw new Exception('Aucun identifiant de chapitre envoyé');
+            }
         }
     } else {
         frontView();

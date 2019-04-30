@@ -9,13 +9,22 @@ require_once 'model/Comment.php';
 function frontView()
 {
     $frontChapter = new Chapter();
-    $frontComment = new Comment();
-    $req = $frontChapter->getChapters();
+    $commentManager = new Comment();
 
-    $post = $frontComment->getChapter($_GET['id']);
+    $comment = $commentManager->getCommentChapter(1);
 
-    $comment = $frontComment->getCommentChapter($_GET['id']);
+    $post = $frontChapter->getChapter(1);
+    require 'view/frontend/indexView.php';
+}
 
+function chapterView()
+{
+    $frontChapter = new Chapter();
+    $commentManager = new Comment();
+
+    $comment = $commentManager->getCommentChapter($_GET['id']);
+
+    $post = $frontChapter->getChapter($_GET['id']);
     require 'view/frontend/indexView.php';
 }
 
@@ -33,11 +42,11 @@ function addComment($postId, $autor, $content)
 {
     $commentManager = new Comment();
 
-    $addComment = $commentManager->addComment($postId, $autor, $content);
+    $addComment = $commentManager->postComment($postId, $autor, $content);
 
     if ($addComment === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     } else {
-        header('Location: indexView.php?action=post&id='.$postId);
+        header('Location: index.php?action=chapterView&id='.$postId);
     }
 }

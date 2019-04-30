@@ -7,23 +7,19 @@
         </div>
     </div>
 </header>
-<?php $header = ob_get_clean(); ?>
 
 
-<?php ob_start(); ?>
 <div class="row container_chapter">
     <!-- Start container_chapter -->
-    <?php
-    while ($chapter = $req->fetch()) {
-        ?>
+
     <div class="col-lg-12 chapter">
         <!-- Start chapter -->
-        <h2 class="display-4"><?= htmlspecialchars($chapter['title']); ?></h2>
+        <h2 class="display-4"><?= htmlspecialchars($post['title']); ?></h2>
         <hr class="my-4">
         <nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
             <ul class="pagination">
                 <li class="page-item">
-                    <a class="page-link" href="index.php?action=frontView&amp;id=<?= $chapter['id']; ?>"
+                    <a class="page-link" href="index.php?action=chapterView&amp;id=1"
                         aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
@@ -32,24 +28,18 @@
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item">
-                    <a class="page-link" href="index.php?action=frontView&amp;id=<?= $chapter['id']; ?>"
+                    <a class="page-link" href="index.php?action=chapterView&amp;id=2"
                         aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
             </ul>
         </nav>
-        <p class="lead"><?= nl2br(htmlspecialchars($chapter['script'])); ?></p>
-    </div> <!-- End chapter -->
-    <?php
-    }
-    $req->closeCursor();
-    ?>
-</div> <!-- End container_chapter -->
-<?php $contentChapter = ob_get_clean(); ?>
+        <p class="lead"><?= nl2br(htmlspecialchars($post['script'])); ?></p>
+    </div> <!-- End chapter --> 
 
-
-<?php ob_start(); ?>
+    </div> <!-- End container_chapter -->
+    
 <div class="container_chat_autor_login">
     <!-- Start container_chat -->
     <div class="row chat-window col-xs-12 col-lg-5" id="chat_window_1">
@@ -61,7 +51,10 @@
                 </div>
             </div>
             <div class="panel-body msg_container_base">
- <!-- just for Jean Forteroch <div class="row msg_container base_sent">
+                                                       <?php
+    while ($comments = $comment->fetch()) {
+        ?>
+ <div class="row msg_container base_sent">
                     <div class="col-md-10 col-xs-10">
                         <div class="messages msg_sent"> 
                                     <p><?= nl2br(htmlspecialchars($comments['content'])); ?></p>
@@ -72,10 +65,8 @@
                     <div class="col-md-2 col-xs-2 avatar">
                         <img src="public/images/TypewriterWithHands.jpg" class=" img-responsive ">
                     </div> 
-                </div> -->
-                                           <?php
-    while ($comments = $comment->fetch()) {
-        ?>
+                </div> 
+   
                 <div class="row msg_container base_receive">
                     <div class="col-md-2 col-xs-2 avatar">
                         <img src="public/images/Comment.jpg" class=" img-responsive ">
@@ -90,9 +81,10 @@
                     </div>
                 </div>
             </div>
+       
             <div class="panel-footer">
                 <div class="input-group">
-                    <form action="index.php?action=addComment&amp;id=<?= $comments['id']; ?>" method="post">
+                    <form action="index.php?action=addComment&amp;id=<?= $post['id']; ?>" method="post">
                         <input type="text" id="content" name="content" class="form-control input-sm chat_input"
                             placeholder="Votre message ici..." />
                         <span class="input-group-btn">
@@ -103,64 +95,13 @@
                 </div>
             </div>
         </div>
-        <?php
+             <?php
     }
             $comment->closeCursor();
             ?>
     </div> <!-- End chat -->
-    <?php $contentChat = ob_get_clean(); ?>
 
-    <?php ob_start(); ?>
-    <div class="card col-xs-12 col-lg-3 autor">
-        <!-- Start autor -->
-        <img src="public/images/Autor.jpg" class="card-img-top" alt="Jean Forteroche">
-        <hr class="separate">
-        <div class="card-body">
-            <h4>Jean Forteroche</h4>
-            <p class="card-text">Acteur écrivain et aventurier, j'ai décider de mettre en ligne et
-                de pulier les épisodes de prochain roman au fur et à mesure de leurs rédactions.
-                Ce nouveau roman est un roman auto-biographique, qui a sa conclusion, je l'espère, sauvera le
-                monde.
-            </p>
-        </div>
-    </div> <!-- End autor -->
-    <?php $contentAutor = ob_get_clean(); ?>
 
-    <?php ob_start(); ?>
-    <div class="card col-xs-12 col-lg-4 login">
-        <!-- Start login -->
-        <div class="card-header">
-            <h5 id="connect">Se connecter</h5>
-        </div>
-        <div class="card-body">
-            <form>
-                <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                    </div>
-                    <input type="text" class="form-control" id="autor" name="autor" placeholder="pseudo">
-                </div>
-                <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-key"></i></span>
-                    </div>
-                    <input type="password" class="form-control" name="password" placeholder="mot de passe">
-                </div>
-                <div class="row align-items-center remember">
-                    <input type="checkbox">Se souvenir de moi
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Connexion" class="btn float-right login_btn">
-                </div>
-            </form>
-        </div>
-        <div class="card-footer">
-            <div class="d-flex justify-content-center links">
-                Vous n'avez pas de compte ?<a href="inscriptionView.php">S'enregistrer</a>
-            </div>
-        </div>
-    </div> <!-- End login -->
-</div> <!-- END CONTAINER CHAT AUTOR LOGIN -->
-<?php $contentLogin = ob_get_clean(); ?>
+<?php $content = ob_get_clean(); ?>
 
 <?php require 'template.php'; ?>

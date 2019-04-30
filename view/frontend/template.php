@@ -27,11 +27,7 @@
 
 <body>
    <div class="container">
-  <?= $header; ?>
-  <?= $contentChapter; ?>
-  <?= $contentChat; ?>
-  <?= $contentAutor; ?>
-  <?= $contentLogin; ?>
+  <?= $content; ?>
      <footer class="row.fluid">
         <div class="col-lg-12 footer">
             Pied de page
