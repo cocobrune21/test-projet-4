@@ -11,9 +11,9 @@ function frontView()
     $frontChapter = new Chapter();
     $commentManager = new Comment();
 
-    $comment = $commentManager->getCommentChapter(1);
+    $comment = $commentManager->getCommentChapter(0);
 
-    $post = $frontChapter->getChapter(1);
+    $post = $frontChapter->getChapter(0);
     require 'view/frontend/indexView.php';
 }
 

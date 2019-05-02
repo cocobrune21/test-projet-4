@@ -33,6 +33,15 @@ class Chapter extends Manage
         return $addChapter;
     }
 
+    public function delateChapter($postId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM chapters WHERE (title, script, date_post_episode, date_modif_episode)');
+        $delateChapter = $req->execute(array($postId, $title, $script, $date_post_episode, $date_modif_episode));
+
+        return $delateChapter;
+    }
+
     public function updateChapter($title, $script)
     {
         $db = $this->dbConnect();

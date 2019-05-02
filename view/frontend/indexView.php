@@ -19,27 +19,23 @@
         <nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
             <ul class="pagination">
                 <li class="page-item">
-                    <a class="page-link" href="index.php?action=chapterView&amp;id=1"
-                        aria-label="Previous">
+                    <a class="page-link" href="index.php?action=chapterView&amp;id=1" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=1">1</a></li>                
                 <li class="page-item">
-                    <a class="page-link" href="index.php?action=chapterView&amp;id=2"
-                        aria-label="Next">
+                    <a class="page-link" href="index.php?action=chapterView&amp;id=2" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
             </ul>
         </nav>
         <p class="lead"><?= nl2br(htmlspecialchars($post['script'])); ?></p>
-    </div> <!-- End chapter --> 
+    </div> <!-- End chapter -->
 
-    </div> <!-- End container_chapter -->
-    
+</div> <!-- End container_chapter -->
+
 <div class="container_chat_autor_login">
     <!-- Start container_chat -->
     <div class="row chat-window col-xs-12 col-lg-5" id="chat_window_1">
@@ -51,22 +47,22 @@
                 </div>
             </div>
             <div class="panel-body msg_container_base">
-                                                       <?php
+                <?php
     while ($comments = $comment->fetch()) {
         ?>
- <div class="row msg_container base_sent">
+                <div class="row msg_container base_sent">
                     <div class="col-md-10 col-xs-10">
-                        <div class="messages msg_sent"> 
-                                    <p><?= nl2br(htmlspecialchars($comments['content'])); ?></p>
+                        <div class="messages msg_sent">
+                            <p><?= nl2br(htmlspecialchars($comments['content'])); ?></p>
                             <time><?= htmlspecialchars($comments['autor']); ?>•
                                 <?= $comments['date_comment_fr']; ?></time>
                         </div>
                     </div>
                     <div class="col-md-2 col-xs-2 avatar">
                         <img src="public/images/TypewriterWithHands.jpg" class=" img-responsive ">
-                    </div> 
-                </div> 
-   
+                    </div>
+                </div>
+
                 <div class="row msg_container base_receive">
                     <div class="col-md-2 col-xs-2 avatar">
                         <img src="public/images/Comment.jpg" class=" img-responsive ">
@@ -81,7 +77,7 @@
                     </div>
                 </div>
             </div>
-       
+
             <div class="panel-footer">
                 <div class="input-group">
                     <form action="index.php?action=addComment&amp;id=<?= $post['id']; ?>" method="post">
@@ -95,13 +91,13 @@
                 </div>
             </div>
         </div>
-             <?php
+        <?php
     }
             $comment->closeCursor();
             ?>
     </div> <!-- End chat -->
 
 
-<?php $content = ob_get_clean(); ?>
+    <?php $content = ob_get_clean(); ?>
 
-<?php require 'template.php'; ?>
+    <?php require 'template.php'; ?>
