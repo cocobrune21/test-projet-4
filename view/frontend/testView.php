@@ -111,4 +111,9 @@
         </div>
     </div> <!-- End login -->
 </div> <!-- END CONTAINER CHAT AUTOR LOGIN -->
+<footer class="row.fluid">
+        <div class="col-lg-12 footer">
+            Pied de page
+        </div>
+    </footer>
 <?php $contentLogin = ob_get_clean(); ?>

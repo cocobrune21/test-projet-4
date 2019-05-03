@@ -9,7 +9,7 @@ class Comment extends Manage
     public function getCommentChapter($postId)
     {
         $db = $this->dbConnect();
-        $comment = $db->prepare('SELECT id, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr FROM comments WHERE id_comment = ? ORDER BY date_comment DESC LIMIT 1');
+        $comment = $db->prepare('SELECT id, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr FROM comments WHERE id_comment = ? ORDER BY date_comment DESC LIMIT 0, 5');
         $comment->execute(array($postId));
 
         return $comment;
