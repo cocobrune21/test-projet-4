@@ -47,6 +47,31 @@ h1 {
     text-align: center;
 }
 
+/* home */
+#home>.home>h2 {
+    background-image: url('../images/Books.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    text-shadow: 0 5px 5px white;
+    height: 17vw;
+}
+
+.bookClosed {
+    text-align: center;
+}
+
+#home>div>article>p>a {
+    background-color: #681700;
+    color: white;
+    align-self: right;
+}
+
+.startChapter {
+    background-color: #4e4a3f;
+    border: 17px solid black;
+}
 
 /* chapter */
 
@@ -264,12 +289,7 @@ img {
 /* author */
 .containerLogAuthor {
     display: flex;
-    width: 98.vw;
-}
-
-body>main>div:nth-child(3)>div>aside>aside {
-    display: flex;
-    color: white;
+    width: 98.5vw;
 }
 
 .separate {
@@ -339,6 +359,7 @@ input:focus {
     margin-left: 4px;
     color: #681700;
 }
+
 
 /* footer */
 

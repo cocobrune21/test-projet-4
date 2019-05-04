@@ -6,11 +6,7 @@ require_once 'controller/ControllerFront.php';
 try {
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'frontView') {
-            if (isset($_GET['id']) && $_GET['id'] >= 0) {
-                frontView();
-            } else {
-                throw new Exception('Aucun identifiant de chapitre envoyé');
-            }
+            frontView();
         } elseif ($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] >= 0) {
                 if (!empty($_POST['autor']) && !empty($_POST['content'])) {
@@ -23,6 +19,8 @@ try {
             }
         } elseif ($_GET['action'] == 'manageAutor') {
             manageAutor();
+        } elseif ($_GET['action'] == 'registrer') {
+            registrer();
         } elseif ($_GET['action'] == 'chapterView') {
             if (isset($_GET['id']) && $_GET['id'] >= 0) {
                 chapterView();

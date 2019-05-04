@@ -8,12 +8,6 @@ require_once 'model/Comment.php';
 
 function frontView()
 {
-    $frontChapter = new Chapter();
-    $commentManager = new Comment();
-
-    $comment = $commentManager->getCommentChapter(0);
-
-    $post = $frontChapter->getChapter(0);
     require 'view/frontend/indexView.php';
 }
 
@@ -25,7 +19,7 @@ function chapterView()
     $comment = $commentManager->getCommentChapter($_GET['id']);
 
     $post = $frontChapter->getChapter($_GET['id']);
-    require 'view/frontend/indexView.php';
+    require 'view/frontend/bookChatView.php';
 }
 
 function manageAutor()
@@ -49,4 +43,19 @@ function addComment($postId, $autor, $content)
     } else {
         header('Location: index.php?action=chapterView&id='.$postId);
     }
+}
+
+function registrer()
+{
+    require 'view/frontend/registrerView.php';
+}
+
+function ifForAddToFrontView()
+{
+    $frontChapter = new Chapter();
+    $commentManager = new Comment();
+
+    $comment = $commentManager->getCommentChapter(0);
+
+    $post = $frontChapter->getChapter(0);
 }

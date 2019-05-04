@@ -27,14 +27,45 @@
 </head>
 
 <body>
+    <header>
+        <div class="navbar" id="nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <h3 class="navbar">Un roman de Jean Forteroche</h3>
 
+                    <nav>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item nav-link">
+                                <a href="index.php?action=frontView">Accueil</a></li>
+                            <li class="nav-item nav-link">
+                                <a href="index.php?action=chapterView&amp;id=1">Lire maintenant</a></li>
+                            <li class="nav-item nav-link">
+                                <a href="index.php?action=registrer">Connexion</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <?= $content; ?>
+    <main role="main">
+        <section id="slide">
+            <div class="jumbotron">
+                <h1>Billet simple pour l'Alaska</h1>
+                <p>
+                    Une aventure inter-active
+                </p>
+            </div>
+        </section>
+
+        <?= $content; ?>
+
+    </main>
 
     <footer class="nav">
         <div class="container">
             <p class="float-right">
-                <a href="#">Back to top</a>
+                <a href="#nav">Retourner au menu</a>
             </p>
             <p>Footer</p>
         </div>
