@@ -118,7 +118,7 @@
     </footer>
 <?php $contentLogin = ob_get_clean(); ?>
 
-{
+{ 
     "name": "corinne/p4",
     "authors": [{
         "name": "cocobrune21",
