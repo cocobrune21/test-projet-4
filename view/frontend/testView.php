@@ -117,3 +117,23 @@
         </div>
     </footer>
 <?php $contentLogin = ob_get_clean(); ?>
+
+{
+    "name": "corinne/p4",
+    "authors": [{
+        "name": "cocobrune21",
+        "email": "corinne.gonneau@gmail.com"
+    }],
+    "require": {
+        "monolog/monolog": "1.0.*",
+        "fzaninotto/faker": "^1.8",
+        "tinymce/tinymce": "^5.0",
+        "mouf/nodejs-installer": "^1.0",
+        "twig/twig": "^1.40"
+    },
+    "autoload": {
+        "psr-4": {
+            "P4\\": "model"
+        }
+    }
+}
