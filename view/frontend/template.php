@@ -17,8 +17,12 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- tinymce -->
     <script src="/path/to/tinymce.min.js"></script>
+<script type="text/javascript">
+  tinymce.init({
+    selector: '#content'
+  });
+  </script>
 
 
     <!--Fontawesome CDN-->
@@ -45,6 +49,8 @@
                                 <a href="index.php?action=chapterView&amp;id=1">Lire maintenant</a></li>
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=registrer">Connexion</a></li>
+                                <li class="nav-item nav-link">
+                                <a href="index.php?action=backEnd">Private</a></li>
                         </ul>
                     </nav>
                 </div>

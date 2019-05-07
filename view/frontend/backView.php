@@ -1,9 +1,11 @@
 <?php ob_start(); ?>
 
 
-  <form action="traitement.php" method="post">
-      <textarea style="width: 100%;" name="content"><br /> </textarea>
-<input name="send" type="submit" value="Envoyer" /></form>
+
+<h5>TinyMCE Quick Start Guide</h5>
+  <form method="post">
+    <textarea id="content">Hello, World!</textarea>
+  </form>
 
 
 <?php $content = ob_get_clean(); ?>

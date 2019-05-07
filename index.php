@@ -21,6 +21,8 @@ try {
             manageAutor();
         } elseif ($_GET['action'] == 'registrer') {
             registrer();
+        } elseif ($_GET['action'] == 'backEnd') {
+            backEnd();
         } elseif ($_GET['action'] == 'chapterView') {
             if (isset($_GET['id']) && $_GET['id'] >= 0) {
                 chapterView();

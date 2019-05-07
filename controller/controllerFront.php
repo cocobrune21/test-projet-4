@@ -3,6 +3,11 @@
 require_once 'model/Chapter.php';
 require_once 'model/Comment.php';
 
+function backEnd()
+{
+    require 'view/frontend/backView.php';
+}
+
 function frontView()
 {
     require 'view/frontend/indexView.php';
