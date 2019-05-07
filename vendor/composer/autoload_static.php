@@ -44,7 +44,7 @@ class ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3
         ),
         'P4\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Model',
+            0 => __DIR__ . '/../..' . '/model',
         ),
         'Mouf\\NodeJsInstaller\\' => 
         array (

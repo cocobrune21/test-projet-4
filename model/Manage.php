@@ -1,7 +1,5 @@
 <?php
 
-namespace P4\Model;
-
 class Manage
 {
     protected function dbConnect()

@@ -1,8 +1,5 @@
 <?php
 
-use P4\Model\Chapter;
-use P4\Model\Comment;
-
 require_once 'model/Chapter.php';
 require_once 'model/Comment.php';
 
