@@ -6,15 +6,26 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3
 {
+    public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
-        'R' => 
+        'T' => 
         array (
-            'Recovery\\' => 9,
+            'Twig\\' => 5,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Ctype\\' => 23,
+        ),
+        'P' => 
+        array (
+            'P4\\' => 3,
         ),
         'M' => 
         array (
             'Mouf\\NodeJsInstaller\\' => 21,
-            'Manage\\' => 7,
         ),
         'F' => 
         array (
@@ -23,17 +34,21 @@ class ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3
     );
 
     public static $prefixDirsPsr4 = array (
-        'Recovery\\' => 
+        'Twig\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/model',
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'P4\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Model',
         ),
         'Mouf\\NodeJsInstaller\\' => 
         array (
             0 => __DIR__ . '/..' . '/mouf/nodejs-installer/src',
-        ),
-        'Manage\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/controller',
         ),
         'Faker\\' => 
         array (
@@ -42,6 +57,13 @@ class ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3
     );
 
     public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
         'M' => 
         array (
             'Monolog' => 

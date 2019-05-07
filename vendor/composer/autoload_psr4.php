@@ -6,8 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Recovery\\' => array($baseDir . '/model'),
+    'Twig\\' => array($vendorDir . '/twig/twig/src'),
+    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
+    'P4\\' => array($baseDir . '/Model'),
     'Mouf\\NodeJsInstaller\\' => array($vendorDir . '/mouf/nodejs-installer/src'),
-    'Manage\\' => array($baseDir . '/controller'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

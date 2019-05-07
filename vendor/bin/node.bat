@@ -1,3 +1,3 @@
 @ECHO OFF
 
-"C:\wamp64\www\test-projet-4\vendor\bin\node.bat" %*
+"C:\wamp64\www\p4\vendor\bin\node.bat" %*

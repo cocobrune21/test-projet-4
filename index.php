@@ -1,7 +1,8 @@
-
 <?php
 
 require_once 'controller/ControllerFront.php';
+require 'libraries/vendor/autoload.php';
+require 'vendor/autoload.php'
 
 try {
     if (isset($_GET['action'])) {
