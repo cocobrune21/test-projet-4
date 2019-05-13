@@ -27,10 +27,6 @@ class ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3
         array (
             'Mouf\\NodeJsInstaller\\' => 21,
         ),
-        'F' => 
-        array (
-            'Faker\\' => 6,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -49,10 +45,6 @@ class ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3
         'Mouf\\NodeJsInstaller\\' => 
         array (
             0 => __DIR__ . '/..' . '/mouf/nodejs-installer/src',
-        ),
-        'Faker\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
     );
 

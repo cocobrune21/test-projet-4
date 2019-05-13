@@ -10,5 +10,4 @@ return array(
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'P4\\' => array($baseDir . '/model'),
     'Mouf\\NodeJsInstaller\\' => array($vendorDir . '/mouf/nodejs-installer/src'),
-    'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );
