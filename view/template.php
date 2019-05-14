@@ -21,9 +21,9 @@
     <script src="vendor/tinymce/tinymce/tinymce.min.js"></script>
     <script type="text/javascript">
     tinymce.init({
-    selector: '#content'
-  });
-  </script>
+        selector: '#script'
+    });
+    </script>
 
     <!--Fontawesome CDN-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -67,7 +67,7 @@
                 </p>
             </div>
         </section>
-        
+
 
         <?= $content; ?>
 

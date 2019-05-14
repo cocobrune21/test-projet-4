@@ -3,11 +3,6 @@
 require_once 'model/Chapter.php';
 require_once 'model/Comment.php';
 
-function backEnd()
-{
-    require 'view/frontend/backView.php';
-}
-
 function frontView()
 {
     require 'view/frontend/indexView.php';
@@ -22,16 +17,6 @@ function chapterView()
 
     $post = $frontChapter->getChapter($_GET['id']);
     require 'view/frontend/bookChatView.php';
-}
-
-function manageAutor()
-{
-    $manageChapter = new Chapter();
-
-    $addChapter = $manageChapter->postChapter($postId, $title, $script);
-    $updateChapter = $manageChapter->updateChapter($title, $script);
-
-    require 'view/frontend/manageView.php';
 }
 
 function addComment($postId, $autor, $content)

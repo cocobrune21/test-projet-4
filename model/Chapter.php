@@ -22,33 +22,34 @@ class Chapter extends Manage
         return $post;
     }
 
-    public function postChapter($postId, $title, $script)
+    public function postChapter($post_id, $title, $script)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO chapters(title, script) VALUES (?, ?');
-        $addChapter = $req->execute(array($postId, $title, $script));
+        $req = $db->prepare('INSERT INTO `chapters`(`id`, `title`, `script`, `date_post_episode`, `dat_modif_episode`) VALUES (?,?,?,NOW(),NOW())');
+        $addChapter = $req->execute(array($post_id, $title, $script));
 
         return $addChapter;
     }
 
-    public function delateChapter($postId)
-    {
-        $db = $this->dbConnect();
-        $req = $db->prepare('DELETE FROM chapters WHERE (title, script, date_post_episode, date_modif_episode)');
-        $delateChapter = $req->execute(array($postId, $title, $script, $date_post_episode, $date_modif_episode));
-
-        return $delateChapter;
-    }
-
-    public function updateChapter($title, $script)
+    public function updateChapter($postId, $title, $script)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE chapters SET script = :newScript WHERE title = :newTitle');
         $updateChapter = $req->execute(array(
+        'newpost' => $postId,
         'newScript' => $script,
         'newtitle' => $title,
     ));
 
         return $updateChapter;
+    }
+
+    public function delateChapter($postId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM chapters WHERE (title, script, date_post_episode, dat_modif_episode)');
+        $delateChapter = $req->execute(array($postId, $title, $script, $date_post_episode, $dat_modif_episode));
+
+        return $delateChapter;
     }
 }
