@@ -1,0 +1,15 @@
+{
+    "name": "corinne/p4",
+    "type": "project",
+    "authors": [{
+        "name": "cocobrune21",
+        "email": "corinne.gonneau@gmail.com"
+    }],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "P4\\": "model"
+        }
+    }
+
+}

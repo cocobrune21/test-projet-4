@@ -6,62 +6,17 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3
 {
-    public static $files = array (
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        'T' => 
-        array (
-            'Twig\\' => 5,
-        ),
-        'S' => 
-        array (
-            'Symfony\\Polyfill\\Ctype\\' => 23,
-        ),
         'P' => 
         array (
             'P4\\' => 3,
         ),
-        'M' => 
-        array (
-            'Mouf\\NodeJsInstaller\\' => 21,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Twig\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/twig/twig/src',
-        ),
-        'Symfony\\Polyfill\\Ctype\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
-        ),
         'P4\\' => 
         array (
             0 => __DIR__ . '/../..' . '/model',
-        ),
-        'Mouf\\NodeJsInstaller\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/mouf/nodejs-installer/src',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'T' => 
-        array (
-            'Twig_' => 
-            array (
-                0 => __DIR__ . '/..' . '/twig/twig/lib',
-            ),
-        ),
-        'M' => 
-        array (
-            'Monolog' => 
-            array (
-                0 => __DIR__ . '/..' . '/monolog/monolog/src',
-            ),
         ),
     );
 
@@ -70,7 +25,6 @@ class ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit18c12b39c409c444fde4efd3da94ebf3::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
