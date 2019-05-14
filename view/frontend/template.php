@@ -17,12 +17,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script src="path/to/tinymce/js/tinymce.min.js"></script>
-    <script type="text/javascript">
-    tinymce.init({
-        selector: '#content'
-    });
-    </script>
 
 
     <!--Fontawesome CDN-->
