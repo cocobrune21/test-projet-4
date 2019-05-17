@@ -36,13 +36,3 @@ function registrer()
 {
     require 'view/frontend/registrerView.php';
 }
-
-function ifForAddToFrontView()
-{
-    $frontChapter = new Chapter();
-    $commentManager = new Comment();
-
-    $comment = $commentManager->getCommentChapter(0);
-
-    $post = $frontChapter->getChapter(0);
-}

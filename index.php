@@ -39,6 +39,8 @@ try {
             } else {
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }
+        } elseif ($_GET['action'] == 'viewEditChapter') {
+            viewEditChapter();
         } elseif ($_GET['action'] == 'editChapter') {
             if (!empty($_POST['title']) && !empty($_POST['script'])) {
                 editChapter($_GET['id'], $_POST['title'], $_POST['script']);

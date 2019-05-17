@@ -21,7 +21,7 @@
     <script src="vendor/tinymce/tinymce/tinymce.min.js"></script>
     <script type="text/javascript">
     tinymce.init({
-        selector: '#script'
+        selector: '#script, #scriptEdit'
     });
     </script>
 

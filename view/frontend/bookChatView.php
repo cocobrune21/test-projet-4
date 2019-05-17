@@ -4,6 +4,7 @@
     <!--start container chapter chat-->
     <div class="row">
         <!-- Start chapter -->
+
         <article class="col-lg-8 chapter">
             <h2 class="display-4"><?= htmlspecialchars($post['title']); ?></h2>
             <hr class="my-4">
@@ -18,11 +19,11 @@
                     </li>
                     <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=2">2</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=3">3</a>
+                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=4">3</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=4">4</a>
+                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=5">4</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=5">5</a>
+                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=6">5</a>
                     </li>
                     <li class="page-item">
                         <a class="page-link" href="index.php?action=chapterView&amp;id=2" aria-label="Next">

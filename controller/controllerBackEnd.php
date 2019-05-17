@@ -8,6 +8,15 @@ function backEnd()
     require 'view/backend/backView.php';
 }
 
+function viewEditChapter()
+{
+    $backChapter = new Chapter();
+
+    $post = $backChapter->getChapter($_GET['id']);
+
+    require 'view/backend/editView.php';
+}
+
 function addChapter($post_id, $title, $script)
 {
     $chapterManager = new Chapter();
@@ -17,21 +26,19 @@ function addChapter($post_id, $title, $script)
     if ($addChapter === false) {
         throw new Exception('Impossible d\'ajouter le chapitre !');
     } else {
-        header('Location: index.php?action=chapterView&id=?');
+        header('Location: index.php?action=chapterView&id='.$post_id);
     }
 }
 
-function editChapter($postId, $title, $script)
+function editChapter($id, $title, $script)
 {
     $editManager = new Chapter();
 
-    $editChapter = $editManager->updateChapter(SpostId, $title, $script);
+    $newChapter = $editManager->updateChapter($id, $title, $script);
 
-    require 'view/backend/editView.php';
-
-    if ($editChapter === false) {
+    if ($newChapter === false) {
         throw new Exception('Impossible de modifier le chapitre !');
     } else {
-        header('Location: index.php?action=chapterView&id=?');
+        header('Location: index.php?action=chapterView&id='.$id);
     }
 }
