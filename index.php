@@ -47,6 +47,12 @@ try {
             } else {
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }
+        } elseif ($_GET['action'] == 'delateChapter') {
+            if (isset($_GET['id']) && $_GET['id'] >= 0) {
+                delateChapter($_GET['id']);
+            } else {
+                throw new Exception('Nous ne pouvons répondre à votre demande !');
+            }
         }
     }
 } catch (Exception $e) {

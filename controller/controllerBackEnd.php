@@ -42,3 +42,16 @@ function editChapter($id, $title, $script)
         header('Location: index.php?action=chapterView&id='.$id);
     }
 }
+
+function delateChapter($id)
+{
+    $delateManager = new Chapter();
+
+    $supChapter = $delateManager->delateChapter($id);
+
+    if ($supChapter === false) {
+        throw new Exception('Impossible de supprimer le chapitre !');
+    } else {
+        header('Location: index.php?action=chapterView&id='.$id);
+    }
+}

@@ -11,28 +11,28 @@
             <nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
                 <ul class="pagination">
                     <li class="page-item">
-                        <a class="page-link" href="index.php?action=chapterView&amp;id=1" aria-label="Previous">
+                        <a class="page-link" href="index.php?action=chapterView&amp;id=12" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=1">1</a>
+                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=12">1</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=2">2</a>
+                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=13">2</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=4">3</a>
+                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=14">3</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=5">4</a>
+                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=15">4</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=6">5</a>
+                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=16">5</a>
                     </li>
                     <li class="page-item">
-                        <a class="page-link" href="index.php?action=chapterView&amp;id=2" aria-label="Next">
+                        <a class="page-link" href="index.php?action=chapterView&amp;id=17" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
                 </ul>
             </nav>
-            <p class="lead"><?= nl2br(htmlspecialchars($post['script'])); ?></p>
+            <p class="lead"><?= nl2br($post['script']); ?></p>
         </article> <!-- end chapter -->
 
         <!--container chat -->
