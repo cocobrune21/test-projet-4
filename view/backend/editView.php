@@ -6,7 +6,7 @@
     <ul>
         <li><a href="index.php?action=backEnd">Ecrire un nouveau chapitre ?</a></li>
         <li><a href="#edit">Modifier un chapitre ?</a></li>
-        <li><a href="#moderate">Modérer les commentaires ?</a></li>
+        <li><a href="index.php?action=getComment&amp;id=1">Accéder aux commentaires ?</a></li>
         <li><a href="index.php?action=frontView">Retourner sur le site ?</a></li>
     </ul>
 </div>
@@ -45,16 +45,15 @@
             <input type="text" class="form-control" id="title" name="title"
                 value="<?= htmlspecialchars($post['title']); ?>">
             <textarea id="script" name="script"><?= nl2br(htmlspecialchars($post['script'])); ?></textarea>
-            <span class="input-group-btn">
-                <input type="submit" class="btn btn-primary btn-chat" name="editChapter" value="Modifier le chapitre">
+            <div class="editDel">
+                <input type="submit" class="btn btn-primary btn-chat" name="editChapter" value="Modifier">
         </form>
         <form class="backEnd" action="index.php?action=delateChapter&amp;id=<?= $post['id']; ?>" method="post">
             <input type="submit" class="btn btn-primary btn-chat" name="id" value="Supprimer">
-
         </form>
-        </span>
-
     </div>
+
+</div>
 </div>
 
 <?php $content = ob_get_clean(); ?>

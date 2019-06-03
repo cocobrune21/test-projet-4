@@ -387,8 +387,14 @@ body>footer>div>p.float-right>a:hover {
 
 /* part to the manage view */
 
-#manage {
-    background-image: url('../images/Typewriter.jpg');
+#edit>div>form>div.editDel>form>input {
+    background-color: black;
+    color: white;
+}
+
+.editDel {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* media queries */

@@ -55,3 +55,49 @@ function delateChapter($id)
         header('Location: index.php?action=chapterView&id='.$id);
     }
 }
+
+function getComment()
+{
+    $frontChapter = new Chapter();
+    $commentManager = new Comment();
+
+    $commentOne = $commentManager->getOneComment($_GET['id']);
+    $comment = $commentManager->getCommentChapter($_GET['id']);
+    $post = $frontChapter->getChapter($_GET['id']);
+    require 'view/backend/commentView.php';
+}
+
+function viewEditComment()
+{
+    $backComment = new Comment();
+
+    $oneComment = $backComment->getOneComment($_GET['id']);
+
+    require 'view/backend/editComment.php';
+}
+
+function editComment($id, $content, $autor)
+{
+    $modifComment = new Comment();
+
+    $newComment = $modifComment->updateComment($id, $content, $autor);
+
+    if ($newComment === false) {
+        throw new Exception('Impossible de modifier le commentaire !');
+    } else {
+        header('view/backend/commentView.php');
+    }
+}
+
+function delateComment($id)
+{
+    $delComment = new Comment();
+
+    $supComment = $delComment->delateComment($id);
+
+    if ($supComment === false) {
+        throw new Exception('Impossible de supprimer le commentaire !');
+    } else {
+        header('view/backend/commentView.php');
+    }
+}

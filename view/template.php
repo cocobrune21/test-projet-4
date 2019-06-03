@@ -21,7 +21,7 @@
     <script src="vendor/tinymce/tinymce/tinymce.min.js"></script>
     <script type="text/javascript">
     tinymce.init({
-        selector: '#script, #scriptEdit'
+        selector: '#script, #scriptEdit, #commentEdit'
     });
     </script>
 
@@ -46,7 +46,7 @@
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=frontView">Accueil</a></li>
                             <li class="nav-item nav-link">
-                                <a href="index.php?action=chapterView&amp;id=1">Lire maintenant</a></li>
+                                <a href="index.php?action=chapterView&amp;id=12">Lire maintenant</a></li>
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=registrer">Connexion</a></li>
                             <li class="nav-item nav-link">

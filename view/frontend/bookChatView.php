@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="col-md-10 col-xs-10">
                                     <div class="messages msg_receive">
-                                        <p><?= nl2br(htmlspecialchars($comments['content'])); ?></p>
+                                        <p><?= nl2br($comments['content']); ?></p>
                                         <time><?= htmlspecialchars($comments['autor']); ?>•
                                             <?= $comments['date_comment_fr']; ?></time>
                                         <a class="btn btn-danger btn-sm" href="#">Signaler</a>

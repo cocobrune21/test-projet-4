@@ -53,6 +53,22 @@ try {
             } else {
                 throw new Exception('Nous ne pouvons répondre à votre demande !');
             }
+        } elseif ($_GET['action'] == 'getComment') {
+            getComment();
+        } elseif ($_GET['action'] == 'viewEditComment') {
+            viewEditComment();
+        } elseif ($_GET['action'] == 'editComment') {
+            if (!empty($_POST['content']) && !empty($_POST['autor'])) {
+                editComment($_GET['id'], $_POST['content'], $_POST['autor']);
+            } else {
+                throw new Exception('Tous les champs ne sont pas remplis !');
+            }
+        } elseif ($_GET['action'] == 'delateComment') {
+            if (isset($_GET['id']) && $_GET['id'] >= 0) {
+                delateComment($_GET['id']);
+            } else {
+                throw new Exception('Nous ne pouvons répondre à votre demande !');
+            }
         }
     }
 } catch (Exception $e) {
