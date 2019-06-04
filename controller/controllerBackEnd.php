@@ -5,7 +5,7 @@ require_once 'model/Comment.php';
 
 function backEnd()
 {
-    require 'view/backend/backView.php';
+    require('view/backend/backView.php');
 }
 
 function viewEditChapter()
@@ -14,7 +14,7 @@ function viewEditChapter()
 
     $post = $backChapter->getChapter($_GET['id']);
 
-    require 'view/backend/editView.php';
+    require('view/backend/editView.php');
 }
 
 function addChapter($post_id, $title, $script)
@@ -64,7 +64,7 @@ function getComment()
     $commentOne = $commentManager->getOneComment($_GET['id']);
     $comment = $commentManager->getCommentChapter($_GET['id']);
     $post = $frontChapter->getChapter($_GET['id']);
-    require 'view/backend/commentView.php';
+    require('view/backend/commentView.php');
 }
 
 function viewEditComment()
@@ -73,19 +73,32 @@ function viewEditComment()
 
     $oneComment = $backComment->getOneComment($_GET['id']);
 
-    require 'view/backend/editComment.php';
+    require('view/backend/editComment.php');
+}
+
+function viewComment($id)
+{
+    $backComment = new Comment();
+
+    $oneComment = $backComment->getOneComment($id);
+
+    require('view/backend/editComment.php');
 }
 
 function editComment($id, $content, $autor)
 {
     $modifComment = new Comment();
 
-    $newComment = $modifComment->updateComment($id, $content, $autor);
 
+    $newComment = $modifComment->updateComment($id, $content, $autor);
+    var_dump($id);
+    var_dump($content);
+    var_dump($autor);
+    var_dump($newComment);
     if ($newComment === false) {
         throw new Exception('Impossible de modifier le commentaire !');
     } else {
-        header('view/backend/commentView.php');
+        viewComment($id);
     }
 }
 
@@ -98,6 +111,6 @@ function delateComment($id)
     if ($supComment === false) {
         throw new Exception('Impossible de supprimer le commentaire !');
     } else {
-        header('view/backend/commentView.php');
+        header('Location: index.php?action=viewEditComment');
     }
 }

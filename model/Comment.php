@@ -35,12 +35,12 @@ class Comment extends Manage
     public function updateComment($id, $content, $autor)
     {
         $data = [
+            'id' => $id,
             'content' => $content,
             'autor' => $autor,
-            'idComment' => $id,
         ];
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comments SET content =:content, autor =:autor, date_comment=NOW()  WHERE id_comment =:idComment');
+        $req = $db->prepare('UPDATE comments SET content =:content, autor =:autor, date_comment=NOW()  WHERE id_comment =:id');
         $updateComment = $req->execute($data);
 
         return $updateComment;
@@ -49,7 +49,7 @@ class Comment extends Manage
     public function delateComment($id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('DELETE FROM comments WHERE id_comment =:idComment');
+        $req = $db->prepare('DELETE FROM comments WHERE id_comment =:id_comment');
         $delateComment = $req->execute(array('idComment' => $id));
 
         return $delateComment;
