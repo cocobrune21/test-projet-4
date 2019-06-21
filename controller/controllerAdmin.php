@@ -73,14 +73,11 @@ function editComment($id, $content, $autor)
     $modifComment = new Comment();
 
     $newComment = $modifComment->updateComment($id, $content, $autor);
-    var_dump($id);
-    var_dump($content);
-    var_dump($autor);
-    var_dump($newComment);
+
     if ($newComment === false) {
         throw new Exception('Impossible de modifier le commentaire !');
     } else {
-        header('Location: index.php?action=viewEditComment');
+        header('Location: index.php?action=getAllComment');
     }
 }
 
@@ -93,6 +90,6 @@ function delateComment($id)
     if ($supComment === false) {
         throw new Exception('Impossible de supprimer le commentaire !');
     } else {
-        header('Location: index.php?action=viewEditComment');
+        header('Location: index.php?action=getAllComment');
     }
 }

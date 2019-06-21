@@ -40,8 +40,8 @@ function logAdmin()
 
     try {
         if (isset($_POST['password']) && $_POST['password'] == 'Mentor007') {
-            require 'view/backend/postAdmin.php';
-        } elseif ((isset($_SESSION['pseudo']) && $_POST['pseudo'] != Jean)
+            require 'view/backend/backView.php';
+        } elseif ((isset($_SESSION['pseudo']) && $_POST['pseudo'] != 'Jean')
     && (isset($_SESSION['password']) && $_POST['password'] != 'Mentor007')) {
             require 'view/frontend/indexView.php';
         } else {

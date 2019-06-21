@@ -8,7 +8,7 @@
                 <h5 id="connect">Se connecter</h5>
             </div>
             <div class="card-body">
-                <form class="backEnd" action="index.php?action=logAdminr&amp;id=?" method="post">
+                <form class="backEnd" action="index.php?action=logAdmin&amp;id=?" method="post">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>

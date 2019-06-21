@@ -48,7 +48,7 @@ class Comment extends Manage
             'autor' => $autor,
         ];
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comments SET content =:content, autor =:autor, date_comment=NOW()  WHERE id_comment =:id');
+        $req = $db->prepare('UPDATE comments SET content =:content, autor =:autor, date_comment=NOW()  WHERE id=:id');
         $updateComment = $req->execute($data);
 
         return $updateComment;
@@ -57,8 +57,8 @@ class Comment extends Manage
     public function delateComment($id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('DELETE FROM comments WHERE id_comment =:id_comment');
-        $delateComment = $req->execute(array('id_comment' => $id));
+        $req = $db->prepare('DELETE FROM comments WHERE id=:id');
+        $delateComment = $req->execute(array('id' => $id));
 
         return $delateComment;
     }

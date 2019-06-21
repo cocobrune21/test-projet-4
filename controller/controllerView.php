@@ -25,9 +25,16 @@ function addComment($postId, $autor, $content)
 
     $addComment = $commentManager->postComment($postId, $autor, $content);
 
-    if ($addComment === false) {
-        throw new Exception('Impossible d\'ajouter le commentaire !');
-    } else {
-        header('Location: index.php?action=chapterView&id='.$postId);
+    try {
+        if ($addComment === false) {
+            throw new Exception('Impossible d\'ajouter le commentaire !');
+        } elseif ((isset($_SESSION['pseudo']) && $_POST['pseudo'] != 'Jean')
+    && (isset($_SESSION['password']) && $_POST['password'] != 'Mentor007')) {
+            header('Location: index.php?action=chapterView&id='.$postId);
+        } else {
+            require 'view/registrerView.php';
+        }
+    } catch (Exception $e) {
+        echo 'Erreur : '.$e->getMessage();
     }
 }

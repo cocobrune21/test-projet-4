@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php ob_start();
+$_SESSION['password'] = $_POST['password'];
+$_SESSION['pseudo'] = $_POST['pseudo'];
+?>
 
 <div class="containerInscription containerLogAuthor">
     <div class="row">

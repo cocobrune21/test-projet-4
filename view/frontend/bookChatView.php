@@ -1,4 +1,5 @@
-<?php ob_start(); ?>
+<?php ob_start();
+?>
 
 <div class="container">
     <!--start container chapter chat-->

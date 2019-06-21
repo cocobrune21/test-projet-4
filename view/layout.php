@@ -47,8 +47,6 @@
                                 <a href="index.php?action=frontView">Accueil</a></li>
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=log">Connexion</a></li>
-                            <li class="nav-item nav-link">
-                                <a href="index.php?action=backEnd">Private</a></li>
                         </ul>
                     </nav>
                 </div>
