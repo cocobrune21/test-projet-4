@@ -11,7 +11,7 @@
     {
         require 'view/frontend/indexView.php';
     }  
-    else 
+    else
     {
         require 'view/frontend/inscriptionView.php');
     }

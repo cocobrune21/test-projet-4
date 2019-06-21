@@ -46,9 +46,7 @@
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=frontView">Accueil</a></li>
                             <li class="nav-item nav-link">
-                                <a href="index.php?action=chapterView&amp;id=12">Lire maintenant</a></li>
-                            <li class="nav-item nav-link">
-                                <a href="index.php?action=registrer">Connexion</a></li>
+                                <a href="index.php?action=log">Connexion</a></li>
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=backEnd">Private</a></li>
                         </ul>

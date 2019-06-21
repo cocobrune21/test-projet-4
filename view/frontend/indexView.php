@@ -14,7 +14,7 @@
                 de sauver le monde !
             </p>
             <p class="nav-fluid startChapter">
-                <a href="index.php?action=chapterView&amp;id=1" class="btn btn-primary">Entrer dans l'aventure</a>
+                <a href="index.php?action=chapterView&amp;id=12" class="btn btn-primary">Entrer dans l'aventure</a>
             </p>
         </article>
     </div>
@@ -23,4 +23,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require 'view/template.php'; ?>
+<?php require 'view/layout.php'; ?>

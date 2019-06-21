@@ -8,22 +8,21 @@
                 <h5 id="connect">Se connecter</h5>
             </div>
             <div class="card-body">
-                <form>
+                <form class="backEnd" action="index.php?action=logAdminr&amp;id=?" method="post">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" id="author" name="autor" placeholder="pseudo">
+                        <input type="text" class="form-control" name="pseudo" placeholder="pseudo">
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" name="password" placeholder="mot de passe">
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="mot de passe">
                     </div>
-                    <div class="row align-items-center remember">
-                        <input type="checkbox">Se souvenir de moi
-                    </div>
+
                     <div class="form-group">
                         <input type="submit" value="Connexion" class="btn float-right login_btn">
                     </div>
@@ -31,7 +30,7 @@
             </div>
             <div class="card-footer">
                 <div class="d-flex justify-content-center links">
-                    Vous n'avez pas de compte ?<a href="inscriptionView.php">S'enregistrer</a>
+                    Vous n'avez pas de compte ?<a href="index.php?action=registrer">S'enregistrer</a>
                 </div>
             </div>
             <!-- Start autor -->
@@ -56,4 +55,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require 'view/template.php'; ?>
+<?php require 'view/layout.php'; ?>

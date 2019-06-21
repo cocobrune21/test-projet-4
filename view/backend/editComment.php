@@ -6,7 +6,7 @@
     <ul>
         <li><a href="index.php?action=backEnd">Ecrire un nouveau chapitre ?</a></li>
         <li><a href="#edit">Modifier un chapitre ?</a></li>
-        <li><a href="index.php?action=getComment&amp;id=1">Accéder aux commentaires ?</a></li>
+        <li><a href="index.php?action=getAllComment">Accéder aux commentaires ?</a></li>
         <li><a href="index.php?action=frontView">Retourner sur le site ?</a></li>
     </ul>
 </div>
@@ -36,4 +36,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require 'view/template.php'; ?>
+<?php require 'view/layout.php'; ?>

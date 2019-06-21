@@ -3,18 +3,13 @@
 require_once 'model/Chapter.php';
 require_once 'model/Comment.php';
 
-function backEnd()
-{
-    require('view/backend/backView.php');
-}
-
 function viewEditChapter()
 {
     $backChapter = new Chapter();
 
     $post = $backChapter->getChapter($_GET['id']);
 
-    require('view/backend/editView.php');
+    require 'view/backend/editView.php';
 }
 
 function addChapter($post_id, $title, $script)
@@ -56,15 +51,12 @@ function delateChapter($id)
     }
 }
 
-function getComment()
+function getAllComment()
 {
-    $frontChapter = new Chapter();
     $commentManager = new Comment();
+    $allComments = $commentManager->getAllComments();
 
-    $commentOne = $commentManager->getOneComment($_GET['id']);
-    $comment = $commentManager->getCommentChapter($_GET['id']);
-    $post = $frontChapter->getChapter($_GET['id']);
-    require('view/backend/commentView.php');
+    require 'view/backend/commentView.php';
 }
 
 function viewEditComment()
@@ -73,22 +65,12 @@ function viewEditComment()
 
     $oneComment = $backComment->getOneComment($_GET['id']);
 
-    require('view/backend/editComment.php');
-}
-
-function viewComment($id)
-{
-    $backComment = new Comment();
-
-    $oneComment = $backComment->getOneComment($id);
-
-    require('view/backend/editComment.php');
+    require 'view/backend/editComment.php';
 }
 
 function editComment($id, $content, $autor)
 {
     $modifComment = new Comment();
-
 
     $newComment = $modifComment->updateComment($id, $content, $autor);
     var_dump($id);
@@ -98,7 +80,7 @@ function editComment($id, $content, $autor)
     if ($newComment === false) {
         throw new Exception('Impossible de modifier le commentaire !');
     } else {
-        viewComment($id);
+        header('Location: index.php?action=viewEditComment');
     }
 }
 

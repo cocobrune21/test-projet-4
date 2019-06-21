@@ -31,8 +31,3 @@ function addComment($postId, $autor, $content)
         header('Location: index.php?action=chapterView&id='.$postId);
     }
 }
-
-function registrer()
-{
-    require 'view/frontend/registrerView.php';
-}

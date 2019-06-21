@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-
 <div class="container">
     <!--start container chapter chat-->
     <div class="row">
@@ -33,6 +32,8 @@
                 </ul>
             </nav>
             <p class="lead"><?= nl2br($post['script']); ?></p>
+            <a class="btn btn-danger btn-sm" href="index.php?action=editView&amp;id=<?= $post['id']; ?>">Modifier</a>
+            <a class="btn btn-danger btn-sm" href="index.php?action=editView&amp;id=<?= $post['id']; ?>">Supprimer</a>
         </article> <!-- end chapter -->
 
         <!--container chat -->
@@ -48,6 +49,21 @@
                             </div>
                         </div>
                         <div class="panel-body msg_container_base">
+                            <div class="row msg_container base_sent">
+                                <div class=" col-md-10 col-xs-10 ">
+                                    <div class=" messages msg_sent ">
+                                        <p>
+                                            <? = nl2br (htmlspecialchars($comment['contenu'])); ?>
+                                        </p>
+                                        <time>
+                                            <? = htmlspecialchars ($comment['autor']); ?> •
+                                            <? = $comment ['date_comment_fr']; ?> </time>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 avatar col-xs-2">
+                                    <img src="public / images / TypewriterWithHands.jpg" class="img-responsive">
+                                </div>
+                            </div>
                             <?php
     while ($comments = $comment->fetch()) {
         ?>
@@ -88,6 +104,8 @@
         </div>
     </div><!-- end container chat -->
 </div> <!-- end container_chapter_chat -->
+
+
 
 <?php $content = ob_get_clean(); ?>
 
