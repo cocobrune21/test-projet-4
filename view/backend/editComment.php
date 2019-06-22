@@ -26,9 +26,6 @@
             <div class="editDel">
                 <input type="submit" class="btn btn-primary btn-chat" name="editComment" value="modifier">
         </form>
-        <form class="backEnd" action="index.php?action=delateComment&amp;id=<?= $oneComment['id']; ?>" method="post">
-            <input type="submit" class="btn btn-primary btn-chat" name="id" value="Supprimer">
-        </form>
     </div>
 
 </div>

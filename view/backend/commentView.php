@@ -20,9 +20,15 @@ while ($data = $allComments->fetch()) {
 
     <h6><?= htmlspecialchars($data['autor']); ?></h6>
     <p><?= nl2br($data['content']); ?></p>
-    <p class="nav-fluid startChapter">
-        <a href="index.php?action=viewEditComment&amp;id=<?= $data['id']; ?>" class="btn btn-primary">Modérer</a>
-    </p>
+    <div class="nav-fluid startChapter allComments">
+        <span><a href="index.php?action=viewEditComment&amp;id=<?= $data['id']; ?>"
+                class="btn btn-primary">Modifier</a></span>
+        <span>
+            <form class="backEnd" action="index.php?action=delateComment&amp;id=<?= $data['id']; ?>" method="post">
+                <input type="submit" class="btn btn-primary btn-chat" name="id" value="Supprimer">
+            </form>
+        </span>
+    </div>
 
 </div>
 

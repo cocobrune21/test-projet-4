@@ -33,6 +33,8 @@ try {
             logAdmin();
         } elseif ($_GET['action'] == 'addUser') {
             addUser($_GET['id'], $_POST['userName'], $_POST['email'], $_POST['pseudo'], $_POST['userPassword']);
+        } elseif ($_GET['action'] == 'sDestroy') {
+            sDestroy();
         } elseif ($_GET['action'] == 'addChapter') {
             if (!empty($_POST['title']) && !empty($_POST['script'])) {
                 addChapter($_GET['id'], $_POST['title'], $_POST['script']);

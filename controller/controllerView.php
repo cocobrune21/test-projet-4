@@ -22,19 +22,14 @@ function chapterView()
 function addComment($postId, $autor, $content)
 {
     $commentManager = new Comment();
-
     $addComment = $commentManager->postComment($postId, $autor, $content);
 
-    try {
-        if ($addComment === false) {
-            throw new Exception('Impossible d\'ajouter le commentaire !');
-        } elseif ((isset($_SESSION['pseudo']) && $_POST['pseudo'] != 'Jean')
+    if ((isset($_SESSION['pseudo']) && $_POST['pseudo'] != 'Jean')
     && (isset($_SESSION['password']) && $_POST['password'] != 'Mentor007')) {
-            header('Location: index.php?action=chapterView&id='.$postId);
-        } else {
-            require 'view/registrerView.php';
-        }
-    } catch (Exception $e) {
-        echo 'Erreur : '.$e->getMessage();
+        header('Location: index.php?action=chapterView&id='.$postId);
+    } elseif ($addComment === false) {
+        throw new Exception('Impossible d\'ajouter le commentaire !');
+    } else {
+        require 'view/registrerView.php';
     }
 }

@@ -28,7 +28,7 @@ function addUser($id, $userName, $email, $pseudo, $userPassword)
     if ($addUser === false) {
         throw new Exception('Impossible de créer votre compte utilisateur !');
     } else {
-        header('Location: index.php?action=frontView');
+        header('Location: index.php?action=log');
     }
 }
 
@@ -50,4 +50,9 @@ function logAdmin()
     } catch (Exception $e) {
         echo 'Erreur : '.$e->getMessage();
     }
+}
+
+function sDestroy() {
+    session_destroy();
+    require 'view/frontend/indexView.php';
 }

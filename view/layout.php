@@ -47,6 +47,8 @@
                                 <a href="index.php?action=frontView">Accueil</a></li>
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=log">Connexion</a></li>
+                            <li class="nav-item nav-link">
+                                <a href="index.php?action=sDestroy">Se déconnecter</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -72,7 +74,7 @@
     <footer class="nav">
         <div class="container">
             <p class="float-right">
-                <a href="#nav">Retourner au menu</a>
+                <a href="#nav">Remonter en haut de page</a>
             </p>
             <p>Footer</p>
         </div>

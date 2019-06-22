@@ -1,7 +1,12 @@
 <?php ob_start();
-$_SESSION['password'] = $_POST['password'];
-$_SESSION['pseudo'] = $_POST['pseudo'];
+if (isset($_SESSION['password']) && (isset($_SESSION['pseudo']))) {
+    $_SESSION['password'] = $_POST['password'];
+    $_SESSION['pseudo'] = $_POST['pseudo'];
+}
+
 ?>
+
+<h5>Vous devez être enregistré et connecté pour poster un commentaire</h5>
 
 <div class="containerInscription containerLogAuthor">
     <div class="row">
@@ -37,7 +42,7 @@ $_SESSION['pseudo'] = $_POST['pseudo'];
                         <input type="password" class="form-control" name="userPassword" placeholder="mot de passe">
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Connexion" class="btn float-right login_btn">
+                        <input type="submit" value="Enregistrer" class="btn float-right login_btn">
                     </div>
                 </form>
             </div>

@@ -61,7 +61,7 @@
                                         <p><?= nl2br($comments['content']); ?></p>
                                         <time><?= htmlspecialchars($comments['autor']); ?>•
                                             <?= $comments['date_comment_fr']; ?></time>
-                                        <a class="btn btn-danger btn-sm" href="#">Signaler</a>
+                                        <a id="report" class="btn btn-danger btn-sm" href="#">Signaler</a>
                                     </div>
                                 </div>
                             </div>
