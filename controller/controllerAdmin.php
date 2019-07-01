@@ -9,7 +9,7 @@ function viewEditChapter()
 
     $post = $backChapter->getChapter($_GET['id']);
 
-    require 'view/backend/editView.php';
+    require('view/backend/editView.php');
 }
 
 function addChapter($post_id, $title, $script)
@@ -56,7 +56,7 @@ function getAllComment()
     $commentManager = new Comment();
     $allComments = $commentManager->getAllComments();
 
-    require 'view/backend/commentView.php';
+    require('view/backend/commentView.php');
 }
 
 function viewEditComment()
@@ -65,7 +65,7 @@ function viewEditComment()
 
     $oneComment = $backComment->getOneComment($_GET['id']);
 
-    require 'view/backend/editComment.php';
+    require('view/backend/editComment.php');
 }
 
 function editComment($id, $content, $autor)

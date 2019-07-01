@@ -17,11 +17,11 @@ function backEnd()
     require 'view/backend/backView.php';
 }
 
-function addUser($id, $userName, $email, $pseudo, $userPassword)
+function addUser($id, $userAdmin, $userName, $email, $pseudo, $userPassword)
 {
     $userControl = new User();
 
-    $addUser = $userControl->addUsers($id, $userName, $email, $pseudo, $userPassword);
+    $addUser = $userControl->addUsers($id, $userAdmin, $userName, $email, $pseudo, $userPassword);
 
     var_dump($addUser);
 
@@ -32,27 +32,33 @@ function addUser($id, $userName, $email, $pseudo, $userPassword)
     }
 }
 
-function logAdmin()
+function logUser($name, $password)
 {
     $userControl = new User();
 
-    $user = $userControl->getUser();
+    $user = $userControl->getUser($name);
 
+    $isPasswordCorrect = password_verify($password, $user['userPassword']);
+
+      var_dump($user);
+    
     try {
-        if (isset($_POST['password']) && $_POST['password'] == 'Mentor007') {
-            require 'view/backend/backView.php';
-        } elseif ((isset($_SESSION['pseudo']) && $_POST['pseudo'] != 'Jean')
-    && (isset($_SESSION['password']) && $_POST['password'] != 'Mentor007')) {
-            require 'view/frontend/indexView.php';
+        if ($user) {
+            if ($user['userAdmin'] == true) {
+                require 'view/backend/backView.php';
+            } else {
+                require 'view/frontend/indexView.php';
+            }
         } else {
             require 'view/registrerView.php';
         }
-    } catch (Exception $e) {
-        echo 'Erreur : '.$e->getMessage();
+    } catch (Exception $error) {
+        echo 'Erreur : '.$error->getMessage();
     }
 }
 
-function sDestroy() {
+function logout()
+{
     session_destroy();
     require 'view/frontend/indexView.php';
 }

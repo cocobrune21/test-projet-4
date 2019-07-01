@@ -1,9 +1,4 @@
 <?php ob_start();
-if (isset($_SESSION['password']) && (isset($_SESSION['pseudo']))) {
-    $_SESSION['password'] = $_POST['password'];
-    $_SESSION['pseudo'] = $_POST['pseudo'];
-}
-
 ?>
 
 <h5>Vous devez être enregistré et connecté pour poster un commentaire</h5>

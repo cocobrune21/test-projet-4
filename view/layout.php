@@ -48,7 +48,7 @@
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=log">Connexion</a></li>
                             <li class="nav-item nav-link">
-                                <a href="index.php?action=sDestroy">Se déconnecter</a></li>
+                                <a href="index.php?action=logout">Se déconnecter</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -1,9 +1,13 @@
 <?php
-
-session_start();
+ session_start();
+    if (isset($_POST['password']) && (isset($_POST['pseudo']))) {
+        $_SESSION['password'] = $_POST['password'];
+        $_SESSION['pseudo'] = $_POST['pseudo'];
+        var_dump($_SESSION['pseudo']);
+    }
 
 require_once __DIR__.'/vendor/autoload.php';
-require_once 'controller/ControllerView.php';
+require_once 'controller/ControllerFront.php';
 require_once 'controller/ControllerAdmin.php';
 require_once 'controller/ControllerUser.php';
 
@@ -29,12 +33,12 @@ try {
             backEnd();
         } elseif ($_GET['action'] == 'log') {
             loggin();
-        } elseif ($_GET['action'] == 'logAdmin') {
-            logAdmin();
+        } elseif ($_GET['action'] == 'logUser') {
+            logUser($_POST['pseudo'], $_POST['password']);
         } elseif ($_GET['action'] == 'addUser') {
-            addUser($_GET['id'], $_POST['userName'], $_POST['email'], $_POST['pseudo'], $_POST['userPassword']);
-        } elseif ($_GET['action'] == 'sDestroy') {
-            sDestroy();
+            addUser($_GET['id'], $userAdmin, $_POST['userName'], $_POST['email'], $_POST['pseudo'], $_POST['userPassword']);
+        } elseif ($_GET['action'] == 'logout') {
+            logout();
         } elseif ($_GET['action'] == 'addChapter') {
             if (!empty($_POST['title']) && !empty($_POST['script'])) {
                 addChapter($_GET['id'], $_POST['title'], $_POST['script']);
