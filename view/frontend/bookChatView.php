@@ -70,14 +70,18 @@
     }
             $comment->closeCursor();
             ?>
+
                         <div class="panel-footer">
                             <div class="input-group">
                                 <form action="index.php?action=addComment&amp;id=<?= $post['id']; ?>" method="post">
                                     <input type="text" id="content" name="content"
                                         class="form-control input-sm chat_input" placeholder="Votre message ici..." />
                                     <span class="input-group-btn">
-                                        <input type="text" class="form-control" id="autor" name="autor"
-                                            placeholder="pseudo">
+                                        <input type="text" class="form-control" id="autor" name="autor" placeholder="<?php if (isset($_SESSION['pseudo'])) {
+                echo $_SESSION['pseudo'];
+            } else {
+                echo 'pseudo';
+            } ?>">
                                         <input type="submit" class="btn btn-primary" id="btn-chat" value="Envoyer">
                                     </span>
                                 </form>

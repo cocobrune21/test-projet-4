@@ -40,14 +40,14 @@ function logUser($name, $password)
 
     $isPasswordCorrect = password_verify($password, $user['userPassword']);
 
-      var_dump($user);
-    
+    var_dump($user);
+
     try {
         if ($user) {
             if ($user['userAdmin'] == true) {
                 require 'view/backend/backView.php';
             } else {
-                require 'view/frontend/indexView.php';
+                header('Location: index.php?action=chapterView&id=12');
             }
         } else {
             require 'view/registrerView.php';
