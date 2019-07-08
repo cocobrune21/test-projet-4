@@ -12,22 +12,14 @@
             <nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
                 <ul class="pagination">
                     <li class="page-item">
-                        <a class="page-link" href="index.php?action=chapterView&amp;id=12" aria-label="Previous">
+                        <a class="page-link" href="index.php?action=prevChapter&amp;id=<?= $post['id']; ?>"
+                            aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=12">1</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=13">2</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=14">3</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=15">4</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="index.php?action=chapterView&amp;id=16">5</a>
-                    </li>
                     <li class="page-item">
-                        <a class="page-link" href="index.php?action=chapterView&amp;id=17" aria-label="Next">
+                        <a class="page-link" href="index.php?action=nextChapter&amp;id=<?= $post['id']; ?>"
+                            aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
@@ -49,19 +41,58 @@
                             </div>
                         </div>
                         <div class="panel-body msg_container_base">
-
-                            <div class="row msg_container base_receive">
-                                <?php    while ($comments = $comment->fetch()) {
+                            <?php    while ($comments = $comment->fetch()) {
     ?>
+
+                            <?php
+                            try {
+                                if ($comments['autor'] == 'Jean') {
+                                    ?>
+                            <div class="row msg_container base_sent">
+                                <div class=" col-md-10 col-xs-10 ">
+                                    <div class=" messages msg_sent ">
+                                        <p>
+                                            <?= nl2br(htmlspecialchars($comments['content'])); ?>
+                                        </p>
+                                        <time>
+                                            <?= htmlspecialchars($comments['autor']); ?> •
+                                            <?= $comments['date_comment_fr']; ?> </time>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 avatar col-xs-2">
+                                    <img src="public/images/TypewriterWithHands.jpg"
+                                        alt="Mains sur une machine à écrire" class="img-responsive">
+                                </div>
+                            </div>
+                            <?php
+                                } else {
+                                    ?>
+                            <div class="row msg_container base_receive">
+
                                 <div class="col-md-2 col-xs-2 avatar">
-                                    <img src="public/images/Comment.jpg" class="angry">
+                                    <?php try {
+                                        if ($comments['report'] == 1) {
+                                            ?>
+                                    <img src="public/images/Anger.png" alt="Smiley en colère" class="img-responsive">
+                                    <?php
+                                        } else {
+                                            ?>
+                                    <img src="public/images/Comment.jpg" alt="Bulle de commentaire"
+                                        class="img-responsive">
+                                    <?php
+                                        }
+                                    } catch (Exception $error) {
+                                        echo 'Erreur : '.$error->getMessage();
+                                    } ?>
+
                                 </div>
                                 <div class="col-md-10 col-xs-10">
                                     <div class="messages msg_receive">
                                         <?php
+                                        try {
                                             if ($comments['report'] == 1) {
                                                 ?>
-                                        <p><img src="public/images/Anger.png" alt="Contenu signalé" /></p>
+                                        <p><span id="report">Contenu signalé en attente de modération</span></p>
                                         <?php
                                             } else {
                                                 ?>
@@ -73,14 +104,24 @@
                                             method="post">
 
                                             <input type="number" name="report" class="phantomButtom" value=1>
-                                            <input type="submit" id="report" class="btn btn-danger btn-sm"
-                                                value='Signaler'>
+                                            <input type="submit" class="btn btn-danger btn-sm" value='Signaler'>
                                         </form>
                                         <?php
-                                            } ?>
+                                            }
+                                        } catch (Exception $error) {
+                                            echo 'Erreur : '.$error->getMessage();
+                                        } ?>
                                     </div>
                                 </div>
                             </div>
+
+                            <?php
+                                }
+                            } catch (Exception $error) {
+                                echo 'Erreur : '.$error->getMessage();
+                            } ?>
+
+
                         </div>
                         <?php
 }

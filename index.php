@@ -31,6 +31,10 @@ try {
             }
         } elseif ($_GET['action'] == 'chapterView') {
             chapterView();
+        } elseif ($_GET['action'] == 'nextChapter') {
+            nextChapter();
+        } elseif ($_GET['action'] == 'prevChapter') {
+            prevChapter();
         } elseif ($_GET['action'] == 'registrer') {
             registrer();
         } elseif ($_GET['action'] == 'backEnd') {
@@ -51,6 +55,10 @@ try {
             }
         } elseif ($_GET['action'] == 'viewEditChapter') {
             viewEditChapter();
+        } elseif ($_GET['action'] == 'nextBackChapter') {
+            nextBackChapter();
+        } elseif ($_GET['action'] == 'prevBackChapter') {
+            prevBackChapter();
         } elseif ($_GET['action'] == 'editChapter') {
             if (!empty($_POST['title']) && !empty($_POST['script'])) {
                 editChapter($_GET['id'], $_POST['title'], $_POST['script']);

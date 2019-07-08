@@ -20,6 +20,44 @@ function chapterView()
     require 'view/frontend/bookChatView.php';
 }
 
+function prevChapter()
+{
+    $frontChapter = new Chapter();
+    $commentManager = new Comment();
+
+    try {
+        if ($_GET['id'] != 12) {
+            $comment = $commentManager->getCommentChapter($_GET['id']);
+            $oneCommentReport = $commentManager->getOneComment($_GET['id']);
+            $post = $frontChapter->getChapter($_GET['id'] - 1);
+            require 'view/frontend/bookChatView.php';
+        } else {
+            header('Location: index.php?action=chapterView&id=12');
+        }
+    } catch (Exception $error) {
+        echo 'Erreur : '.$error->getMessage();
+    }
+}
+
+function nextChapter()
+{
+    $frontChapter = new Chapter();
+    $commentManager = new Comment();
+
+    try {
+        if ($_GET['id']) {
+            $comment = $commentManager->getCommentChapter($_GET['id']);
+            $oneCommentReport = $commentManager->getOneComment($_GET['id']);
+            $post = $frontChapter->getChapter($_GET['id'] + 1);
+            require 'view/frontend/bookChatView.php';
+        } else {
+            header('Location: index.php?action=chapterView&id=12');
+        }
+    } catch (Exception $error) {
+        echo 'Erreur : '.$error->getMessage();
+    }
+}
+
 function addComment($postId, $autor, $content)
 {
     $commentManager = new Comment();

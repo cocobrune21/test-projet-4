@@ -9,7 +9,39 @@ function viewEditChapter()
 
     $post = $backChapter->getChapter($_GET['id']);
 
-    require('view/backend/editView.php');
+    require 'view/backend/editView.php';
+}
+
+function prevBackChapter()
+{
+    $backChapter = new Chapter();
+
+    try {
+        if ($_GET['id'] != 12) {
+            $post = $backChapter->getChapter($_GET['id'] - 1);
+            require 'view/backend/editView.php';
+        } else {
+            header('Location: index.php?action=viewEditChapter&id=12');
+        }
+    } catch (Exception $error) {
+        echo 'Erreur : '.$error->getMessage();
+    }
+}
+
+function nextBackChapter()
+{
+    $backChapter = new Chapter();
+
+    try {
+        if ($_GET['id']) {
+            $post = $backChapter->getChapter($_GET['id'] + 1);
+            require 'view/backend/editView.php';
+        } else {
+            header('Location: index.php?action=viewEditChapter&id=12');
+        }
+    } catch (Exception $error) {
+        echo 'Erreur : '.$error->getMessage();
+    }
 }
 
 function addChapter($post_id, $title, $script)
@@ -56,7 +88,7 @@ function getAllComment()
     $commentManager = new Comment();
     $allComments = $commentManager->getAllComments();
 
-    require('view/backend/commentView.php');
+    require 'view/backend/commentView.php';
 }
 
 function viewEditComment()
@@ -65,7 +97,7 @@ function viewEditComment()
 
     $oneComment = $backComment->getOneComment($_GET['id']);
 
-    require('view/backend/editComment.php');
+    require 'view/backend/editComment.php';
 }
 
 function editComment($id, $content, $autor)
