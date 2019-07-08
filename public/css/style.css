@@ -135,6 +135,19 @@ body>main>div.container>div>article {
 
 
 /* chat */
+.phantomButtom {
+    visibility: hidden;
+}
+
+body>main>div:nth-child(5)>div>span:nth-child(2)>form:nth-child(1)>input.btn.btn-primary.accept {
+    background-color: #fdfcfc;
+}
+
+body>main>div:nth-child(4)>div>span:nth-child(2)>form>input {
+    background-color: #681700;
+    color: white;
+}
+
 body>main>div.container>div>div {
     background-color: #fdfcfc;
 }

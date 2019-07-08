@@ -24,6 +24,15 @@ while ($data = $allComments->fetch()) {
         <span><a href="index.php?action=viewEditComment&amp;id=<?= $data['id']; ?>"
                 class="btn btn-primary">Modifier</a></span>
         <span>
+            <?php
+            if ($data['report'] == 1) {
+                ?>
+            <form action="index.php?action=reportComment&amp;id=<?= $data['id']; ?>" method="post">
+                <input type="number" name="report" class="phantomButtom" value=0>
+                <input type="submit" class="btn btn-primary accept" value='Accepter'>
+            </form>
+            <?php
+            } ?>
             <form class="backEnd" action="index.php?action=delateComment&amp;id=<?= $data['id']; ?>" method="post">
                 <input type="submit" class="btn btn-primary btn-chat" name="id" value="Supprimer">
             </form>

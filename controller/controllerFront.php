@@ -14,8 +14,9 @@ function chapterView()
     $commentManager = new Comment();
 
     $comment = $commentManager->getCommentChapter($_GET['id']);
-
+    $oneCommentReport = $commentManager->getOneComment($_GET['id']);
     $post = $frontChapter->getChapter($_GET['id']);
+
     require 'view/frontend/bookChatView.php';
 }
 
@@ -25,7 +26,6 @@ function addComment($postId, $autor, $content)
 
     try {
         if (isset($_SESSION['pseudo']) && $_SESSION['password']) {
-            $autor = $_SESSION['pseudo'];
             $addComment = $commentManager->postComment($postId, $autor, $content);
             header('Location: index.php?action=chapterView&id='.$postId);
         } elseif (!isset($_SESSION['pseudo']) && !isset($_SESSION['password'])) {
@@ -36,4 +36,13 @@ function addComment($postId, $autor, $content)
     } catch (Exception $error) {
         echo 'Erreur : '.$error->getMessage();
     }
+}
+
+function reportComment($id, $report)
+{
+    $commentManager = new Comment();
+
+    $reportComment = $commentManager->reportComment($id, $report);
+
+    header('Location: index.php?action=chapterView&id=12');
 }

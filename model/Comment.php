@@ -54,6 +54,19 @@ class Comment extends Manage
         return $updateComment;
     }
 
+    public function reportComment($id, $report)
+    {
+        $data = [
+            'id' => $id,
+            'report' => $report,
+        ];
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE comments SET report=:report WHERE id=:id');
+        $reportComment = $req->execute($data);
+
+        return $reportComment;
+    }
+
     public function delateComment($id)
     {
         $db = $this->dbConnect();

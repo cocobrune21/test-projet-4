@@ -1,10 +1,14 @@
 <?php
  session_start();
-    if (isset($_POST['password']) && (isset($_POST['pseudo']))) {
-        $_SESSION['password'] = $_POST['password'];
-        $_SESSION['pseudo'] = $_POST['pseudo'];
-        var_dump($_SESSION['pseudo']);
-    }
+
+ try {
+     if (isset($_POST['password']) && (isset($_POST['pseudo']))) {
+         $_SESSION['password'] = $_POST['password'];
+         $_SESSION['pseudo'] = $_POST['pseudo'];
+     }
+ } catch (Exception $error) {
+     echo 'Erreur : '.$error->getMessage();
+ }
 
 require_once __DIR__.'/vendor/autoload.php';
 require_once 'controller/ControllerFront.php';
@@ -61,6 +65,10 @@ try {
             }
         } elseif ($_GET['action'] == 'getAllComment') {
             getAllComment();
+        } elseif ($_GET['action'] == 'reportComment') {
+            var_dump($_POST['report']);
+            var_dump($_GET['id']);
+            reportComment($_GET['id'], $_POST['report']);
         } elseif ($_GET['action'] == 'viewEditComment') {
             viewEditComment();
         } elseif ($_GET['action'] == 'editComment') {

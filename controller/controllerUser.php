@@ -40,10 +40,10 @@ function logUser($name, $password)
 
     $isPasswordCorrect = password_verify($password, $user['userPassword']);
 
-    var_dump($user);
-
     try {
         if ($user) {
+            $_SESSION['logUser'] = $user['userAdmin'];
+            var_dump($_SESSION['logUser']);
             if ($user['userAdmin'] == true) {
                 require 'view/backend/backView.php';
             } else {

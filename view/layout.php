@@ -43,14 +43,33 @@
 
                     <nav>
                         <ul class="nav nav-pills">
+
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=frontView">Accueil</a></li>
-                            <li class="nav-item nav-link">
-                                <a href="index.php?action=log">Connexion</a></li>
+
+                            <?php
+                            try {
+                                if (isset($_SESSION['logUser'])) {
+                                    ?>
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=logout">Se déconnecter</a></li>
+                            <?php if (isset($_SESSION['logUser']) && $_SESSION['logUser'] == true) {
+                                        ?>
+                            <li class="nav-item nav-link">
+                                <a href="index.php?action=backEnd">Admin</a></li><?php
+                                    } ?>
+                            <?php
+                                } else {
+                                    ?> <li class="nav-item nav-link connexion">
+                                <a href="index.php?action=log">Connexion</a></li> <?php
+                                }
+                            } catch (Exception $error) {
+                                echo 'Erreur : '.$error->getMessage();
+                            }?>
+
                         </ul>
                     </nav>
+
                 </div>
             </div>
         </div>

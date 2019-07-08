@@ -49,25 +49,41 @@
                             </div>
                         </div>
                         <div class="panel-body msg_container_base">
-                            <?php
-    while ($comments = $comment->fetch()) {
-        ?>
+
                             <div class="row msg_container base_receive">
+                                <?php    while ($comments = $comment->fetch()) {
+    ?>
                                 <div class="col-md-2 col-xs-2 avatar">
-                                    <img src="public/images/Comment.jpg" class=" img-responsive ">
+                                    <img src="public/images/Comment.jpg" class="angry">
                                 </div>
                                 <div class="col-md-10 col-xs-10">
                                     <div class="messages msg_receive">
+                                        <?php
+                                            if ($comments['report'] == 1) {
+                                                ?>
+                                        <p><img src="public/images/Anger.png" alt="Contenu signalé" /></p>
+                                        <?php
+                                            } else {
+                                                ?>
                                         <p><?= nl2br($comments['content']); ?></p>
+
                                         <time><?= htmlspecialchars($comments['autor']); ?>•
                                             <?= $comments['date_comment_fr']; ?></time>
-                                        <a id="report" class="btn btn-danger btn-sm" href="#">Signaler</a>
+                                        <form action="index.php?action=reportComment&amp;id=<?= $comments['id']; ?>"
+                                            method="post">
+
+                                            <input type="number" name="report" class="phantomButtom" value=1>
+                                            <input type="submit" id="report" class="btn btn-danger btn-sm"
+                                                value='Signaler'>
+                                        </form>
+                                        <?php
+                                            } ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <?php
-    }
+}
             $comment->closeCursor();
             ?>
 
@@ -77,11 +93,9 @@
                                     <input type="text" id="content" name="content"
                                         class="form-control input-sm chat_input" placeholder="Votre message ici..." />
                                     <span class="input-group-btn">
-                                        <input type="text" class="form-control" id="autor" name="autor" placeholder="<?php if (isset($_SESSION['pseudo'])) {
-                echo $_SESSION['pseudo'];
-            } else {
-                echo 'pseudo';
-            } ?>">
+                                        <input type="text" class="form-control" id="autor" name="autor"
+                                            value="<?= isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : ''; ?>"
+                                            placeholder="<?= !isset($_SESSION['pseudo']) ? 'pseudo' : ''; ?>">
                                         <input type="submit" class="btn btn-primary" id="btn-chat" value="Envoyer">
                                     </span>
                                 </form>
