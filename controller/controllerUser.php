@@ -17,11 +17,11 @@ function backEnd()
     require 'view/backend/backView.php';
 }
 
-function addUser($id, $userAdmin, $userName, $email, $pseudo, $userPassword)
+function addUser($userName, $email, $pseudo, $userPassword)
 {
     $userControl = new User();
 
-    $addUser = $userControl->addUsers($id, $userAdmin, $userName, $email, $pseudo, $userPassword);
+    $addUser = $userControl->addUsers($userName, $email, $pseudo, $userPassword);
 
     var_dump($addUser);
 
@@ -60,5 +60,5 @@ function logUser($name, $password)
 function logout()
 {
     session_destroy();
-    require 'view/frontend/indexView.php';
+    header('Location: index.php?action=log');
 }

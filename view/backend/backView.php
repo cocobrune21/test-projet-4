@@ -15,7 +15,7 @@
 
 <div id="write">
     <div class="input-group">
-        <form class="backEnd" action="index.php?action=addChapter&amp;$post_id=?" method="post">
+        <form class="backEnd" action="index.php?action=addChapter" method="post">
             <input type="text" class="form-control" id="title" name="title" placeholder="Titre du chapitre ...">
             <textarea id="script" name="script">Votre texte ici...</textarea>
             <span class="input-group-btn">

@@ -16,20 +16,16 @@
 <nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
     <ul class="pagination">
         <li class="page-item">
-            <a class="page-link" href="index.php?action=prevBackChapter&amp;id=<?= $post['id']; ?>" aria-label="Previous">
+            <a class="page-link" href="index.php?action=prevBackChapter&amp;id=<?= $post['id']; ?>"
+                aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
-        <li class="page-item"><a class="page-link" href="index.php?action=viewEditChapter&amp;id=12">1</a>
+
+        <li class="page-item">
+            <a class="page-link" href="index.php?action=viewEditChapter&amp;id=">1</a>
         </li>
-        <li class="page-item"><a class="page-link" href="index.php?action=viewEditChapter&amp;id=13">2</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="index.php?action=viewEditChapter&amp;id=14">3</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="index.php?action=viewEditChapter&amp;id=15">4</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="index.php?action=viewEditChapter&amp;id=16">5</a>
-        </li>
+
         <li class="page-item">
             <a class="page-link" href="index.php?action=nextBackChapter&amp;id=<?= $post['id']; ?>" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>

@@ -1,4 +1,5 @@
 /* header */
+
 .navbar {
     background-color: black;
     color: white;
@@ -9,8 +10,7 @@ body>header>div>div>div>nav>ul>li {
     background-color: #4e4a3f;
 }
 
-body>header>div>div>div>nav>ul>li.nav-item.nav-link.active {
-    background-color: #681700;
+body>header>div>div>div>nav>ul>li {
     color: white;
 }
 
@@ -27,9 +27,8 @@ body>header>div>div>div>nav>ul>li>a:hover {
     color: #FFC312;
 }
 
-
 #slide {
-    background-image: url('../images/Alaska.jpg');
+    background-image: url('../images/Aurora.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -43,11 +42,14 @@ h1 {
     text-shadow: 0 5px 5px white;
 }
 
-#slide>div>p {
-    text-align: center;
+#slide>div>h3 {
+    background-color: transparent;
+    margin-left: 25vw;
 }
 
+
 /* home */
+
 #home>.home>h2 {
     background-image: url('../images/Books.jpg');
     background-size: cover;
@@ -75,24 +77,22 @@ h1 {
     border: 17px solid black;
 }
 
-/* chapter */
+/* chapter view */
 
-body>main>div.container>div>article {
-    background-image: url('../images/Book.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+body>main>div.container>div:nth-child(1)>article.col-lg-8.chapter {
     padding: 65px;
     word-wrap: break-word;
-    border-right: 5px solid #681700;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-bottom: 10vw;
 }
 
-.display-4 {
+.display-4,
+.page-item>a {
     font-size: 2.5rem;
     font-weight: bold;
     color: white;
     text-shadow: 0 5px 5px black;
-    margin-left: 10vw;
-    margin-top: 2vw;
 }
 
 .my-4 {
@@ -100,22 +100,12 @@ body>main>div.container>div>article {
     margin-right: 10vw;
 }
 
-.nav_chapter {
-    margin-left: 10vw;
-}
-
-.page-item>a {
-    color: #681700;
-}
-
-.page-item>a:active {
-    background-color: #681700;
-    color: white;
+.page-item {
+    margin: auto;
 }
 
 .page-item>a:hover {
-    background-color: #4e4a3f;
-    color: white;
+    color: #681700;
 }
 
 .page-link {
@@ -124,54 +114,26 @@ body>main>div.container>div>article {
     padding-right: 0.55rem;
     padding-bottom: 0.3rem;
     padding-left: 0.55rem;
+    background-color: #e9ecef;
+    bottom: 0.5rem;
 }
 
-.lead {
-    margin-left: 10vw;
-    margin-top: 2vw;
-    margin-bottom: 3vw;
-    font-weight: bold;
+p {
+    line-height: inherit;
+    text-align: justify;
+    color: #4e4a3f;
 }
 
 
 /* chat */
-.phantomButtom {
-    visibility: hidden;
-}
 
-body>main>div:nth-child(5)>div>span:nth-child(2)>form:nth-child(1)>input.btn.btn-primary.accept {
-    background-color: #fdfcfc;
-}
-
-body>main>div:nth-child(4)>div>span:nth-child(2)>form>input {
-    background-color: #681700;
-    color: white;
-}
-
-body>main>div.container>div>div {
-    background-color: #fdfcfc;
-}
-
-#chat_window_1>div {
-    border: 10px solid black;
-    border-radius: 5px;
-}
-
-.col-md-2,
-.col-md-10 {
-    padding: 0;
-}
-
-.icon_minim {
-    padding: 2px 10px;
-}
-
-.msg_container_base {
-    background: #dcd8d5;
+#chat_window_1 {
+    background: #e9ecef;
     margin: 0;
-    padding: 0 10px 10px;
-    max-height: 300px;
     overflow-x: hidden;
+    max-height: 1200px;
+    border-radius: 5px;
+    margin-bottom: 10vw;
 }
 
 .top-bar {
@@ -181,20 +143,32 @@ body>main>div.container>div>div {
     padding: 10px;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
-#chat_window_1>div>div.panel-heading.top-bar>div>h3 {
-    font-size: 0.95rem;
+.panel-title {
+    text-align: center;
 }
 
-.msg_receive {
-    padding-left: 0;
-    margin-left: 0;
+.msg_container {
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
 }
 
-.msg_sent {
-    padding-bottom: 20px !important;
-    margin-right: 0;
+.avatar {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.col-md-2,
+.col-md-10 {
+    padding: 0;
 }
 
 .messages {
@@ -203,6 +177,11 @@ body>main>div.container>div>div {
     border-radius: 2px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.msg_receive {
+    margin-left: 0;
 }
 
 .messages>p {
@@ -215,60 +194,37 @@ body>main>div.container>div>div {
     color: #ccc;
 }
 
-.msg_container {
-    padding: 10px;
-    overflow: hidden;
-    display: flex;
+.phantomButtom {
+    visibility: hidden;
 }
 
-img {
-    display: block;
+.msg_sent {
+    padding-bottom: 20px !important;
+    margin-right: 0;
+}
+
+.panel-footer {
+    background-color: #5f5d5d;
     width: 100%;
+    padding: 10px;
 }
 
-.avatar {
-    position: relative;
+#btn-chat {
+    background-color: #681700;
+    color: white;
+    margin-top: 10px;
+    margin-left: 230px;
 }
 
-.base_receive>.avatar:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border: 5px solid #FFF;
-    border-left-color: rgba(117, 23, 23, 0);
-    border-bottom-color: rgba(0, 0, 0, 0);
-}
-
-.base_sent {
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
-.base_sent>.avatar:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border: 5px solid white;
-    border-right-color: transparent;
-    border-top-color: transparent;
-}
-
-.btn-primary {
-    color: black;
+#btn-chat:hover {
     background-color: #FFC312;
-    width: 100px;
+    color: black;
     border-color: #FFC312;
 }
 
-.btn-primary:hover {
-    background-color: #681700;
-    border-color: #681700;
+.btn-primary {
+    width: 100px;
+    border-color: #FFC312;
 }
 
 .btn-danger {
@@ -281,26 +237,10 @@ img {
     border-color: #681700;
 }
 
-
-#chat_window_1>div>div.panel-footer {
-    background: black;
+#autor {
+    margin-top: 10px;
 }
 
-.btn-group.dropup {
-    position: fixed;
-    left: 0px;
-    bottom: 0;
-}
-
-#btn-chat {
-    background-color: #681700;
-    color: white;
-}
-
-#btn-chat:hover {
-    background-color: #FFC312;
-    color: black;
-}
 
 /* commentView */
 

@@ -1,6 +1,6 @@
 <?php
  session_start();
-
+var_dump($paginChapter['script']);
  try {
      if (isset($_POST['password']) && (isset($_POST['pseudo']))) {
          $_SESSION['password'] = $_POST['password'];
@@ -33,6 +33,8 @@ try {
             chapterView();
         } elseif ($_GET['action'] == 'nextChapter') {
             nextChapter();
+        } elseif ($_GET['action'] == 'paginChapters') {
+            paginChapters();
         } elseif ($_GET['action'] == 'prevChapter') {
             prevChapter();
         } elseif ($_GET['action'] == 'registrer') {
@@ -44,12 +46,12 @@ try {
         } elseif ($_GET['action'] == 'logUser') {
             logUser($_POST['pseudo'], $_POST['password']);
         } elseif ($_GET['action'] == 'addUser') {
-            addUser($_GET['id'], $userAdmin, $_POST['userName'], $_POST['email'], $_POST['pseudo'], $_POST['userPassword']);
+            addUser($_POST['userName'], $_POST['email'], $_POST['pseudo'], $_POST['userPassword']);
         } elseif ($_GET['action'] == 'logout') {
             logout();
         } elseif ($_GET['action'] == 'addChapter') {
             if (!empty($_POST['title']) && !empty($_POST['script'])) {
-                addChapter($_GET['id'], $_POST['title'], $_POST['script']);
+                addChapter($_POST['title'], $_POST['script']);
             } else {
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }

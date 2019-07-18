@@ -14,11 +14,19 @@ class Chapter extends Manage
         return $post;
     }
 
-    public function postChapter($post_id, $title, $script)
+    public function getChaptersAsc()
+    {
+        $db = $this->dbConnect();
+        $paginChapter = $db->query('SELECT id, title, script, DATE_FORMAT(date_post_episode,\'%d/%m/%Y à %Hh%imin%ss\') AS date_post_episode_fr, DATE_FORMAT(dat_modif_episode,\'%d/%m/%Y à %Hh%imin%ss\') AS dat_modif_episode_fr FROM chapters ORDER BY id ASC');
+
+        return $paginChapter;
+    }
+
+    public function postChapter($title, $script)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('INSERT INTO chapters(id, title, script, date_post_episode, dat_modif_episode) VALUES (?,?,?,NOW(),NOW())');
-        $addChapter = $req->execute(array($post_id, $title, $script));
+        $addChapter = $req->execute(array($title, $script));
 
         return $addChapter;
     }

@@ -25,18 +25,30 @@ function prevChapter()
     $frontChapter = new Chapter();
     $commentManager = new Comment();
 
+    $id = $_GET['id'];
+
     try {
-        if ($_GET['id'] != 12) {
-            $comment = $commentManager->getCommentChapter($_GET['id']);
-            $oneCommentReport = $commentManager->getOneComment($_GET['id']);
-            $post = $frontChapter->getChapter($_GET['id'] - 1);
+        if ($id) {
+            $comment = $commentManager->getCommentChapter($id - 1);
+            $oneCommentReport = $commentManager->getOneComment($id - 1);
+            $post = $frontChapter->getChapter($id - 1);
             require 'view/frontend/bookChatView.php';
         } else {
-            header('Location: index.php?action=chapterView&id=12');
+            header('Location: index.php?action=chapterView');
         }
     } catch (Exception $error) {
         echo 'Erreur : '.$error->getMessage();
     }
+}
+
+function paginChapters()
+{
+    $frontChapter = new Chapter();
+    var_dump($frontChapter);
+
+    $paginChapter = $frontChapter->getChaptersAsc();
+
+    require 'view/frontend/bookChatView.php';
 }
 
 function nextChapter()
@@ -44,14 +56,18 @@ function nextChapter()
     $frontChapter = new Chapter();
     $commentManager = new Comment();
 
+    $post = $frontChapter->getChapter($_GET['id']);
+
+    $id = $_GET['id'];
+
     try {
-        if ($_GET['id']) {
-            $comment = $commentManager->getCommentChapter($_GET['id']);
-            $oneCommentReport = $commentManager->getOneComment($_GET['id']);
-            $post = $frontChapter->getChapter($_GET['id'] + 1);
+        if ($id && ($id == $post['id'])) {
+            $comment = $commentManager->getCommentChapter($id + 1);
+            $oneCommentReport = $commentManager->getOneComment($id + 1);
+            $post = $frontChapter->getChapter($id + 1);
             require 'view/frontend/bookChatView.php';
         } else {
-            header('Location: index.php?action=chapterView&id=12');
+            header('Location: index.php?action=chapterView');
         }
     } catch (Exception $error) {
         echo 'Erreur : '.$error->getMessage();

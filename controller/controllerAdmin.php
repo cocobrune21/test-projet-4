@@ -44,16 +44,16 @@ function nextBackChapter()
     }
 }
 
-function addChapter($post_id, $title, $script)
+function addChapter($title, $script)
 {
     $chapterManager = new Chapter();
 
-    $addChapter = $chapterManager->postChapter($post_id, $title, $script);
+    $addChapter = $chapterManager->postChapter($title, $script);
 
     if ($addChapter === false) {
         throw new Exception('Impossible d\'ajouter le chapitre !');
     } else {
-        header('Location: index.php?action=chapterView&id='.$post_id);
+        header('Location: index.php?action=chapterView');
     }
 }
 

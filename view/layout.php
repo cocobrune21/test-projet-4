@@ -39,14 +39,11 @@
         <div class="navbar" id="nav">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <h3 class="navbar">Un roman de Jean Forteroche</h3>
-
                     <nav>
                         <ul class="nav nav-pills">
 
                             <li class="nav-item nav-link">
                                 <a href="index.php?action=frontView">Accueil</a></li>
-
                             <?php
                             try {
                                 if (isset($_SESSION['logUser'])) {
@@ -66,7 +63,6 @@
                             } catch (Exception $error) {
                                 echo 'Erreur : '.$error->getMessage();
                             }?>
-
                         </ul>
                     </nav>
 
@@ -80,7 +76,7 @@
             <div class="jumbotron">
                 <h1>Billet simple pour l'Alaska</h1>
                 <p>
-                    Une aventure inter-active
+                    <h3 class="navbar">Un roman de Jean Forteroche</h3>
                 </p>
             </div>
         </section>

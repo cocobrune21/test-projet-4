@@ -24,16 +24,14 @@ class User extends Manage
         return $user;
     }
 
-    public function addUsers($id, $userAdmin, $userName, $email, $pseudo, $userPassword)
+    public function addUsers($userName, $email, $pseudo, $userPassword)
     {
         $db = $this->dbConnect();
 
         $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        $req = $db->prepare('INSERT INTO users(id, userAdmin, userName, email, pseudo, userPassword) VALUES (:id, :userAdmin, :userName, :email, :pseudo, :userPassword)');
+        $req = $db->prepare('INSERT INTO users(userName, email, pseudo, userPassword) VALUES (:userName, :email, :pseudo, :userPassword)');
         $addUser = $req->execute(array(
-            'id' => $id,
-            'userAdmin' => $userAdmin,
             'userName' => $userName,
             'email' => $email,
             'pseudo' => $pseudo,
