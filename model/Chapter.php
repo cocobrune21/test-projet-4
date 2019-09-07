@@ -7,10 +7,10 @@ class Chapter extends Manage
     public function getChapters()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, page, title, script, DATE_FORMAT(date_post_episode,\'%d/%m/%Y à %Hh%imin%ss\') AS date_post_episode_fr, DATE_FORMAT(dat_modif_episode,\'%d/%m/%Y à %Hh%imin%ss\') AS dat_modif_episode_fr 
+        $req = $db->query('SELECT id, numChapter, title, content, DATE_FORMAT(datePostChapter,\'%d/%m/%Y à %Hh%imin%ss\') AS datePostChapter_fr, DATE_FORMAT(dateModifChapter,\'%d/%m/%Y à %Hh%imin%ss\') AS dateModifChapter_fr 
         FROM chapters 
         WHERE id 
-        ORDER BY page');
+        ORDER BY numChapter');
 
         return $req;
     }
@@ -18,7 +18,7 @@ class Chapter extends Manage
     public function getChapter($id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, page, title, script, DATE_FORMAT(date_post_episode,\'%d/%m/%Y à %Hh%imin%ss\') AS date_post_episode_fr, DATE_FORMAT(dat_modif_episode,\'%d/%m/%Y à %Hh%imin%ss\') AS dat_modif_episode_fr 
+        $req = $db->prepare('SELECT id, numChapter, title, content, DATE_FORMAT(datePostChapter,\'%d/%m/%Y à %Hh%imin%ss\') AS datePostChapter_fr, DATE_FORMAT(dateModifChapter,\'%d/%m/%Y à %Hh%imin%ss\') AS dateModifChapter_fr 
         FROM chapters 
         WHERE id=?');
         $req->execute(array($id));
@@ -27,26 +27,26 @@ class Chapter extends Manage
         return $post;
     }
 
-    public function postChapter($page, $title, $script)
+    public function postChapter($numChapter, $title, $content)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO chapters(page, title, script, date_post_episode, dat_modif_episode) 
+        $req = $db->prepare('INSERT INTO chapters(numChapter, title, content, datePostChapter, dateModifChapter) 
         VALUES (?,?,?,NOW(),NOW())');
-        $addChapter = $req->execute(array($page, $title, $script));
+        $addChapter = $req->execute(array($numChapter, $title, $content));
 
         return $addChapter;
     }
 
-    public function updateChapter($id, $title, $script)
+    public function updateChapter($id, $title, $content)
     {
         $data = [
             'title' => $title,
-            'script' => $script,
+            'content' => $content,
             'id' => $id,
         ];
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE chapters 
-        SET title=:title, script=:script, date_post_episode= NOW(), dat_modif_episode= NOW() 
+        SET title=:title, content=:content, datePostChapter= NOW(), dateModifChapter= NOW() 
         WHERE id=:id');
         $updateChapter = $req->execute($data);
 

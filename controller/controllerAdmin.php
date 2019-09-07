@@ -22,15 +22,15 @@ function addChapter($page, $title, $script)
     $chapterManager = new Chapter();
     $pageSearch = new Pagination();
 
-    $pageExiste = $pageSearch->searchhapterExiste();
+    $pageExiste = $pageSearch->searchChapterExiste();
     $lastPage = $pageSearch->lastChapter();
     $firstChapter = $pageSearch->firstChapter();
 
-    $thisPage = $lastPage['page'];
+    $thisPage = $lastPage['numChapter'];
 
     $page = $_SESSION['page'];
 
-    if ($page == $pageExiste['page']) {
+    if ($page == $pageExiste['numChapter']) {
         $page = $thisPage + 1;
         $addChapter = $chapterManager->postChapter($page, $title, $script);
         if ($addChapter === false) {
@@ -70,7 +70,7 @@ function delateChapter($id)
     if ($supChapter === false) {
         throw new Exception('Impossible de supprimer le chapitre !');
     } else {
-        header('Location: index.php?action=chapterView&id='.$id);
+        viewEditChapter();
     }
 }
 
@@ -113,6 +113,6 @@ function delateComment($id)
     if ($supComment === false) {
         throw new Exception('Impossible de supprimer le commentaire !');
     } else {
-        header('Location: index.php?action=getAllComment');
+        getAllComment();
     }
 }

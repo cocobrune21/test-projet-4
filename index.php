@@ -11,8 +11,8 @@
  }
 
  try {
-     if (isset($_POST['page'])) {
-         $_SESSION['page'] = $_POST['page'];
+     if (isset($_POST['numChapter'])) {
+         $_SESSION['page'] = $_POST['numChapter'];
      }
  } catch (Exception $error) {
      echo 'Erreur : '.$error->getMessage();
@@ -56,8 +56,8 @@ try {
         } elseif ($_GET['action'] == 'logout') {
             logout();
         } elseif ($_GET['action'] == 'addChapter') {
-            if (isset($_POST['page']) && isset($_POST['title']) && isset($_POST['script'])) {
-                addChapter($_POST['page'], $_POST['title'], $_POST['script']);
+            if (isset($_POST['numChapter']) && isset($_POST['title']) && isset($_POST['content'])) {
+                addChapter($_POST['numChapter'], $_POST['title'], $_POST['content']);
             } else {
                 throw new Exception('Vous avez déjà un chapitre a ce numéro !');
             }
@@ -68,8 +68,8 @@ try {
         } elseif ($_GET['action'] == 'prevBackChapter') {
             prevBackChapter();
         } elseif ($_GET['action'] == 'editChapter') {
-            if (isset($_POST['title']) && isset($_POST['script'])) {
-                editChapter($_GET['id'], $_POST['title'], $_POST['script']);
+            if (isset($_POST['title']) && isset($_POST['content'])) {
+                editChapter($_GET['id'], $_POST['title'], $_POST['content']);
             } else {
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }

@@ -20,7 +20,7 @@
 
                             for ($page = 1; $page <= $nbrChapt; ++$page) {
                                 while ($currentPage = $currentChapter->fetch()) {
-                                    $page = $currentPage['page']; ?>
+                                    $page = $currentPage['numChapter']; ?>
 
         <li class="page-item">
             <a class="page-link"
@@ -40,7 +40,7 @@
         <form class="backEnd" action="index.php?action=editChapter&amp;id=<?= $post['id']; ?>" method="post">
             <input type="text" class="form-control" id="title" name="title"
                 value="<?= htmlspecialchars($post['title']); ?>">
-            <textarea id="script" name="script"><?= nl2br(htmlspecialchars($post['script'])); ?></textarea>
+            <textarea id="script" name="content"><?= nl2br(htmlspecialchars($post['content'])); ?></textarea>
             <div class="editDel">
                 <input type="submit" class="btn btn-primary btn-chat" name="editChapter" value="Modifier">
         </form>

@@ -17,8 +17,9 @@
     <div class="input-group">
         <form class="backEnd" action="index.php?action=addChapter" method="post">
             <input type="text" class="form-control" id="title" name="title" placeholder="Titre du chapitre ...">
-            <input type="number" class="form-control" id="page" name="page" placeholder="Numéro du chapitre ...">
-            <textarea id="script" name="script">Votre texte ici...</textarea>
+            <input type="number" class="form-control" id="numChapter" name="numChapter"
+                placeholder="Numéro du chapitre ...">
+            <textarea id="script" name="content">Votre texte ici...</textarea>
             <span class="input-group-btn">
                 <input type="submit" class="btn btn-primary" id="btn-chat" value="Poster">
             </span>

@@ -15,7 +15,7 @@
                         <?php
                             for ($page = 1; $page <= $nbrChapt; ++$page) {
                                 while ($currentPage = $currentChapter->fetch()) {
-                                    $page = $currentPage['page']; ?>
+                                    $page = $currentPage['numChapter']; ?>
 
                         <li class="page-item">
                             <a class="page-link"
@@ -33,7 +33,7 @@
 
             <hr class="my-4">
 
-            <p class="lead"><?= nl2br($post['script']); ?></p>
+            <p class="lead"><?= nl2br($post['content']); ?></p>
         </article> <!-- end chapter -->
 
         <!--container chat -->

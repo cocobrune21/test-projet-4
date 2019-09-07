@@ -19,9 +19,9 @@ class Pagination extends Manage
     public function searchChapterExiste()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT page 
+        $req = $db->query('SELECT numChapter 
         FROM chapters 
-        WHERE page="'.$_SESSION['page'].'"');
+        WHERE numChapter="'.$_SESSION['page'].'"');
 
         $pageExiste = $req->fetch();
 
@@ -31,9 +31,9 @@ class Pagination extends Manage
     public function lastChapter()
     {
         $db = $this->dbconnect();
-        $req = $db->query('SELECT page 
+        $req = $db->query('SELECT numChapter 
         FROM chapters 
-        ORDER BY page DESC LIMIT 1');
+        ORDER BY numChapter DESC LIMIT 1');
 
         $lastChapter = $req->fetch();
 
