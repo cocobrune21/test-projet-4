@@ -56,8 +56,11 @@ class Chapter extends Manage
     public function delateChapter($id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('DELETE FROM chapters 
-        WHERE id=:id');
+        $req = $db->prepare('DELETE chapters, comments 
+        FROM chapters
+        INNER JOIN comments
+        ON chapters.id = comments.id_comment
+        WHERE chapters.id=:id');
         $delateChapter = $req->execute(array('id' => $id));
 
         return $delateChapter;
