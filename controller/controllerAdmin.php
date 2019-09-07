@@ -6,54 +6,45 @@ require_once 'model/Comment.php';
 function viewEditChapter()
 {
     $backChapter = new Chapter();
+    $pagin = new Pagination();
+
+    $data = $pagin->countPage();
+    $nbrChapt = $data['nbrChapt'];
 
     $post = $backChapter->getChapter($_GET['id']);
+    $currentChapter = $backChapter->getChapters();
 
     require 'view/backend/editView.php';
 }
 
-function prevBackChapter()
-{
-    $backChapter = new Chapter();
-
-    try {
-        if ($_GET['id'] != 12) {
-            $post = $backChapter->getChapter($_GET['id'] - 1);
-            require 'view/backend/editView.php';
-        } else {
-            header('Location: index.php?action=viewEditChapter&id=12');
-        }
-    } catch (Exception $error) {
-        echo 'Erreur : '.$error->getMessage();
-    }
-}
-
-function nextBackChapter()
-{
-    $backChapter = new Chapter();
-
-    try {
-        if ($_GET['id']) {
-            $post = $backChapter->getChapter($_GET['id'] + 1);
-            require 'view/backend/editView.php';
-        } else {
-            header('Location: index.php?action=viewEditChapter&id=12');
-        }
-    } catch (Exception $error) {
-        echo 'Erreur : '.$error->getMessage();
-    }
-}
-
-function addChapter($title, $script)
+function addChapter($page, $title, $script)
 {
     $chapterManager = new Chapter();
+    $pageSearch = new Pagination();
 
-    $addChapter = $chapterManager->postChapter($title, $script);
+    $pageExiste = $pageSearch->searchhapterExiste();
+    $lastPage = $pageSearch->lastChapter();
+    $firstChapter = $pageSearch->firstChapter();
 
-    if ($addChapter === false) {
-        throw new Exception('Impossible d\'ajouter le chapitre !');
+    $thisPage = $lastPage['page'];
+
+    $page = $_SESSION['page'];
+
+    if ($page == $pageExiste['page']) {
+        $page = $thisPage + 1;
+        $addChapter = $chapterManager->postChapter($page, $title, $script);
+        if ($addChapter === false) {
+            throw new Exception('Impossible d\'ajouter le chapitre !');
+        } else {
+            header('Location: index.php?action=chapterView&id='.$firstChapter['id'].';&page=1');
+        }
     } else {
-        header('Location: index.php?action=chapterView');
+        $addChapter = $chapterManager->postChapter($page, $title, $script);
+        if ($addChapter === false) {
+            throw new Exception('Impossible d\'ajouter le chapitre !');
+        } else {
+            header('Location: index.php?action=chapterView&id=?;&page='.$page);
+        }
     }
 }
 

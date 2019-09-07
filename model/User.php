@@ -7,7 +7,8 @@ class User extends Manage
     public function getUsers()
     {
         $db = $this->dbConnect();
-        $users = $db->query('SELECT id, userAdmin, userName, email, pseudo, userPassword FROM users');
+        $users = $db->query('SELECT id, userAdmin, userName, email, pseudo, userPassword 
+        FROM users');
 
         return $users;
     }
@@ -15,7 +16,9 @@ class User extends Manage
     public function getUser($pseudo)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, userAdmin, userName, email, pseudo, userPassword FROM users WHERE pseudo = :pseudo');
+        $req = $db->prepare('SELECT id, userAdmin, userName, email, pseudo, userPassword 
+        FROM users 
+        WHERE pseudo = :pseudo');
         $req->execute(array(
             'pseudo' => $pseudo,
         ));
@@ -30,7 +33,8 @@ class User extends Manage
 
         $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        $req = $db->prepare('INSERT INTO users(userName, email, pseudo, userPassword) VALUES (:userName, :email, :pseudo, :userPassword)');
+        $req = $db->prepare('INSERT INTO users(userName, email, pseudo, userPassword) 
+        VALUES (:userName, :email, :pseudo, :userPassword)');
         $addUser = $req->execute(array(
             'userName' => $userName,
             'email' => $email,

@@ -1,10 +1,18 @@
 <?php
  session_start();
-var_dump($paginChapter['script']);
+
  try {
      if (isset($_POST['password']) && (isset($_POST['pseudo']))) {
          $_SESSION['password'] = $_POST['password'];
          $_SESSION['pseudo'] = $_POST['pseudo'];
+     }
+ } catch (Exception $error) {
+     echo 'Erreur : '.$error->getMessage();
+ }
+
+ try {
+     if (isset($_POST['page'])) {
+         $_SESSION['page'] = $_POST['page'];
      }
  } catch (Exception $error) {
      echo 'Erreur : '.$error->getMessage();
@@ -21,7 +29,7 @@ try {
             frontView();
         } elseif ($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] >= 0) {
-                if (!empty($_POST['autor']) && !empty($_POST['content'])) {
+                if (isset($_POST['autor']) && isset($_POST['content'])) {
                     addComment($_GET['id'], $_POST['autor'], $_POST['content']);
                 } else {
                     throw new Exception('Tous les champs ne sont pas remplis !');
@@ -33,8 +41,6 @@ try {
             chapterView();
         } elseif ($_GET['action'] == 'nextChapter') {
             nextChapter();
-        } elseif ($_GET['action'] == 'paginChapters') {
-            paginChapters();
         } elseif ($_GET['action'] == 'prevChapter') {
             prevChapter();
         } elseif ($_GET['action'] == 'registrer') {
@@ -50,10 +56,10 @@ try {
         } elseif ($_GET['action'] == 'logout') {
             logout();
         } elseif ($_GET['action'] == 'addChapter') {
-            if (!empty($_POST['title']) && !empty($_POST['script'])) {
-                addChapter($_POST['title'], $_POST['script']);
+            if (isset($_POST['page']) && isset($_POST['title']) && isset($_POST['script'])) {
+                addChapter($_POST['page'], $_POST['title'], $_POST['script']);
             } else {
-                throw new Exception('Tous les champs ne sont pas remplis !');
+                throw new Exception('Vous avez déjà un chapitre a ce numéro !');
             }
         } elseif ($_GET['action'] == 'viewEditChapter') {
             viewEditChapter();
@@ -62,7 +68,7 @@ try {
         } elseif ($_GET['action'] == 'prevBackChapter') {
             prevBackChapter();
         } elseif ($_GET['action'] == 'editChapter') {
-            if (!empty($_POST['title']) && !empty($_POST['script'])) {
+            if (isset($_POST['title']) && isset($_POST['script'])) {
                 editChapter($_GET['id'], $_POST['title'], $_POST['script']);
             } else {
                 throw new Exception('Tous les champs ne sont pas remplis !');

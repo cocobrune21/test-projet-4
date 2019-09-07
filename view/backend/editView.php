@@ -15,22 +15,22 @@
 
 <nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
     <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="index.php?action=prevBackChapter&amp;id=<?= $post['id']; ?>"
-                aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
+
+        <?php
+
+                            for ($page = 1; $page <= $nbrChapt; ++$page) {
+                                while ($currentPage = $currentChapter->fetch()) {
+                                    $page = $currentPage['page']; ?>
 
         <li class="page-item">
-            <a class="page-link" href="index.php?action=viewEditChapter&amp;id=">1</a>
+            <a class="page-link"
+                href="index.php?action=viewEditChapter&amp;id=<?=$currentPage['id']; ?>; page=<?= $page; ?> ">
+                <?= $page; ?></a>
         </li>
+        <?php
+                                }
+                            }?>
 
-        <li class="page-item">
-            <a class="page-link" href="index.php?action=nextBackChapter&amp;id=<?= $post['id']; ?>" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
     </ul>
 </nav>
 

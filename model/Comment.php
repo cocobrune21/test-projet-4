@@ -7,7 +7,9 @@ class Comment extends Manage
     public function getAllComments()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, id_comment, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report FROM comments ORDER BY date_comment DESC');
+        $req = $db->query('SELECT id, id_comment, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report 
+        FROM comments 
+        ORDER BY date_comment DESC');
 
         return $req;
     }
@@ -15,7 +17,9 @@ class Comment extends Manage
     public function getOneComment($id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, id_comment, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report FROM comments WHERE id= ?');
+        $req = $db->prepare('SELECT id, id_comment, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report 
+        FROM comments 
+        WHERE id= ?');
         $req->execute(array($id));
         $comment = $req->fetch();
 
@@ -25,7 +29,10 @@ class Comment extends Manage
     public function getCommentChapter($postId)
     {
         $db = $this->dbConnect();
-        $comment = $db->prepare('SELECT id, id_comment, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report FROM comments WHERE id_comment = ? ORDER BY date_comment DESC');
+        $comment = $db->prepare('SELECT id, id_comment, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report 
+        FROM comments 
+        WHERE id_comment = ? 
+        ORDER BY date_comment DESC');
         $comment->execute(array($postId));
 
         return $comment;
@@ -48,7 +55,9 @@ class Comment extends Manage
             'autor' => $autor,
         ];
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comments SET content =:content, autor =:autor, date_comment=NOW()  WHERE id=:id');
+        $req = $db->prepare('UPDATE comments 
+        SET content =:content, autor =:autor, date_comment=NOW()  
+        WHERE id=:id');
         $updateComment = $req->execute($data);
 
         return $updateComment;
@@ -61,7 +70,9 @@ class Comment extends Manage
             'report' => $report,
         ];
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comments SET report=:report WHERE id=:id');
+        $req = $db->prepare('UPDATE comments 
+        SET report=:report 
+        WHERE id=:id');
         $reportComment = $req->execute($data);
 
         return $reportComment;

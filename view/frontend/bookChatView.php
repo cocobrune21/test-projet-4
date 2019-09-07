@@ -11,29 +11,21 @@
             <div class="chapterHeader">
                 <nav aria-label="Navigation chapter" class="nav_chapter">
                     <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="index.php?action=prevChapter&amp;id=<?= $post['id']; ?>"
-                                aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <?php    while ($req = $paginChapter->fetch()) {
-    ?>
-                        <li class="page-item">
-                            <a class="page-link" href="index.php?action=paginChapters&amp;id=<?= $req['id']; ?>">
-                                1</a>
-                        </li>
+
                         <?php
-}
- $req->closeCursor();
-            ?>
+                            for ($page = 1; $page <= $nbrChapt; ++$page) {
+                                while ($currentPage = $currentChapter->fetch()) {
+                                    $page = $currentPage['page']; ?>
 
                         <li class="page-item">
-                            <a class="page-link" href="index.php?action=nextChapter&amp;id=<?= $post['id']; ?>"
-                                aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
+                            <a class="page-link"
+                                href="index.php?action=chapterView&amp;id=<?=$currentPage['id']; ?>; page=<?= $page; ?>">
+                                <?= $page; ?></a>
                         </li>
+                        <?php
+                                }
+                            }?>
+
                     </ul>
                 </nav>
                 <h2 class="display-4"><?= htmlspecialchars($post['title']); ?></h2>
@@ -59,7 +51,7 @@
                         <div class="row msg_container">
 
                             <?php    while ($comments = $comment->fetch()) {
-                ?>
+                                ?>
 
                             <?php
                             try {
@@ -134,7 +126,7 @@
                                 echo 'Erreur : '.$error->getMessage();
                             } ?>
                             <?php
-            }
+                            }
  $comment->closeCursor();
             ?>
                         </div>
