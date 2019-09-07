@@ -19,9 +19,11 @@
  }
 
 require_once __DIR__.'/vendor/autoload.php';
-require_once 'controller/ControllerFront.php';
-require_once 'controller/ControllerAdmin.php';
-require_once 'controller/ControllerUser.php';
+
+require_once 'controller/chaptersController.php';
+require_once 'controller/commentsController.php';
+require_once 'controller/viewController.php';
+require_once 'controller/userController.php';
 
 try {
     if (isset($_GET['action'])) {

@@ -60,7 +60,7 @@ class Chapter extends Manage
         FROM chapters
         INNER JOIN comments
         ON chapters.id = comments.id_comment
-        WHERE chapters.id=:id');
+        WHERE chapters. id=:id');
         $delateChapter = $req->execute(array('id' => $id));
 
         return $delateChapter;

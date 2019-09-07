@@ -23,8 +23,6 @@ function addUser($userName, $email, $pseudo, $userPassword)
 
     $addUser = $userControl->addUsers($userName, $email, $pseudo, $userPassword);
 
-    var_dump($addUser);
-
     if ($addUser === false) {
         throw new Exception('Impossible de créer votre compte utilisateur !');
     } else {
@@ -43,7 +41,6 @@ function logUser($name, $password)
     try {
         if ($user) {
             $_SESSION['logUser'] = $user['userAdmin'];
-            var_dump($_SESSION['logUser']);
             if ($user['userAdmin'] == true) {
                 require 'view/backend/backView.php';
             } else {

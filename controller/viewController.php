@@ -36,29 +36,25 @@ function chapterView()
     }
 }
 
-function addComment($postId, $autor, $content)
+function viewEditChapter()
 {
-    $commentManager = new Comment();
+    $backChapter = new Chapter();
+    $pagin = new Pagination();
 
-    try {
-        if (isset($_SESSION['pseudo']) && $_SESSION['password']) {
-            $addComment = $commentManager->postComment($postId, $autor, $content);
-            header('Location: index.php?action=chapterView&id='.$postId);
-        } elseif (!isset($_SESSION['pseudo']) && !isset($_SESSION['password'])) {
-            require 'view/logView.php';
-        } else {
-            throw new Exception('Impossible d\'ajouter le commentaire !');
-        }
-    } catch (Exception $error) {
-        echo 'Erreur : '.$error->getMessage();
-    }
+    $data = $pagin->countPage();
+    $nbrChapt = $data['nbrChapt'];
+
+    $post = $backChapter->getChapter($_GET['id']);
+    $currentChapter = $backChapter->getChapters();
+
+    require 'view/backend/editView.php';
 }
 
-function reportComment($id, $report)
+function viewEditComment()
 {
-    $commentManager = new Comment();
+    $backComment = new Comment();
 
-    $reportComment = $commentManager->reportComment($id, $report);
+    $oneComment = $backComment->getOneComment($_GET['id']);
 
-    header('Location: index.php?action=chapterView&id=12');
+    require 'view/backend/editComment.php';
 }

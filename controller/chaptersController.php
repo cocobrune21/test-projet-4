@@ -1,21 +1,7 @@
 <?php
 
 require_once 'model/Chapter.php';
-require_once 'model/Comment.php';
-
-function viewEditChapter()
-{
-    $backChapter = new Chapter();
-    $pagin = new Pagination();
-
-    $data = $pagin->countPage();
-    $nbrChapt = $data['nbrChapt'];
-
-    $post = $backChapter->getChapter($_GET['id']);
-    $currentChapter = $backChapter->getChapters();
-
-    require 'view/backend/editView.php';
-}
+require_once 'model/Pagination.php';
 
 function addChapter($page, $title, $script)
 {
@@ -71,48 +57,5 @@ function delateChapter($id)
         throw new Exception('Impossible de supprimer le chapitre !');
     } else {
         viewEditChapter();
-    }
-}
-
-function getAllComment()
-{
-    $commentManager = new Comment();
-    $allComments = $commentManager->getAllComments();
-
-    require 'view/backend/commentView.php';
-}
-
-function viewEditComment()
-{
-    $backComment = new Comment();
-
-    $oneComment = $backComment->getOneComment($_GET['id']);
-
-    require 'view/backend/editComment.php';
-}
-
-function editComment($id, $content, $autor)
-{
-    $modifComment = new Comment();
-
-    $newComment = $modifComment->updateComment($id, $content, $autor);
-
-    if ($newComment === false) {
-        throw new Exception('Impossible de modifier le commentaire !');
-    } else {
-        header('Location: index.php?action=getAllComment');
-    }
-}
-
-function delateComment($id)
-{
-    $delComment = new Comment();
-
-    $supComment = $delComment->delateComment($id);
-
-    if ($supComment === false) {
-        throw new Exception('Impossible de supprimer le commentaire !');
-    } else {
-        getAllComment();
     }
 }
