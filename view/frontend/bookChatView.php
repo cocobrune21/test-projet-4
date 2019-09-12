@@ -19,7 +19,7 @@
 
                         <li class="page-item">
                             <a class="page-link"
-                                href="index.php?action=chapterView&amp;id=<?=$currentPage['id']; ?>; page=<?= $page; ?>">
+                                href="index.php?action=chapterView&id=<?=$currentPage['id']; ?>& page=<?= $page; ?>">
                                 <?= $page; ?></a>
                         </li>
                         <?php
@@ -107,7 +107,7 @@
 
                                     <time><?= htmlspecialchars($comments['autor']); ?>•
                                         <?= $comments['date_comment_fr']; ?></time>
-                                    <form action="index.php?action=reportComment&amp;id=<?= $comments['id']; ?>"
+                                    <form action="index.php?action=reportComment&id=<?= $comments['id']; ?>"
                                         method="post">
 
                                         <input type="number" name="report" class="phantomButtom" value=1>
@@ -138,7 +138,7 @@
                 </aside>
                 <div class="panel-footer">
                     <div class="input-group">
-                        <form action="index.php?action=addComment&amp;id=<?= $post['id']; ?>" method="post">
+                        <form action="index.php?action=addComment&id=<?= $post['id']; ?>" method="post">
                             <input type="text" id="content" name="content" class="form-control input-sm chat_input"
                                 placeholder="Votre message ici..." />
                             <span class="input-group-btn">

@@ -5,7 +5,7 @@
     <p>Que souhaitez vous faire aujourd'hui ?</p>
     <ul>
         <li><a href="index.php?action=backEnd">Ecrire un nouveau chapitre ?</a></li>
-        <li><a href="index.php?action=viewEditChapter&amp;id=1">Modifier un chapitre ?</a></li>
+        <li><a href="index.php?action=viewEditChapter&id=1">Modifier un chapitre ?</a></li>
         <li><a href="index.php?action=getAllComment">Accéder aux commentaires ?</a></li>
         <li><a href="index.php?action=frontView">Retourner sur le site ?</a></li>
     </ul>
@@ -21,19 +21,19 @@ while ($data = $allComments->fetch()) {
     <h6><?= htmlspecialchars($data['autor']); ?></h6>
     <p><?= nl2br($data['content']); ?></p>
     <div class="nav-fluid startChapter allComments">
-        <span><a href="index.php?action=viewEditComment&amp;id=<?= $data['id']; ?>"
+        <span><a href="index.php?action=viewEditComment&id=<?= $data['id']; ?>"
                 class="btn btn-primary">Modifier</a></span>
         <span>
             <?php
             if ($data['report'] == 1) {
                 ?>
-            <form action="index.php?action=reportComment&amp;id=<?= $data['id']; ?>" method="post">
+            <form action="index.php?action=reportComment&id=<?= $data['id']; ?>" method="post">
                 <input type="number" name="report" class="phantomButtom" value=0>
                 <input type="submit" class="btn btn-primary accept" value='Accepter'>
             </form>
             <?php
             } ?>
-            <form class="backEnd" action="index.php?action=delateComment&amp;id=<?= $data['id']; ?>" method="post">
+            <form class="backEnd" action="index.php?action=delateComment&id=<?= $data['id']; ?>" method="post">
                 <input type="submit" class="btn btn-primary btn-chat" name="id" value="Supprimer">
             </form>
         </span>

@@ -19,7 +19,7 @@
 <div id="moderate">
 
     <div class="input-group">
-        <form class="backEnd" action="index.php?action=editComment&amp;id=<?= $oneComment['id']; ?>" method="post">
+        <form class="backEnd" action="index.php?action=editComment&id=<?= $oneComment['id']; ?>" method="post">
             <input type="text" class="form-control" id="autor" name="autor"
                 value="<?= htmlspecialchars($oneComment['autor']); ?>">
             <textarea id="commentEdit" name="content"><?= nl2br($oneComment['content']); ?></textarea>

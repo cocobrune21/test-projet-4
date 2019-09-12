@@ -44,7 +44,7 @@ function logUser($name, $password)
             if ($user['userAdmin'] == true) {
                 require 'view/backend/backView.php';
             } else {
-                header('Location: index.php?action=chapterView&id=?;&page=1');
+                header('Location: index.php?action=chapterView&id=?&page=1');
             }
         } else {
             require 'view/registrerView.php';

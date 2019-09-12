@@ -5,7 +5,7 @@
     <p>Que souhaitez vous faire aujourd'hui ?</p>
     <ul>
         <li><a href="#write">Ecrire un nouveau chapitre ?</a></li>
-        <li><a href="index.php?action=viewEditChapter&amp;id=1">Modifier un chapitre ?</a></li>
+        <li><a href="index.php?action=viewEditChapter&id=1">Modifier un chapitre ?</a></li>
         <li><a href="index.php?action=getAllComment">Accéder aux commentaires ?</a></li>
         <li><a href="index.php?action=frontView">Retourner sur le site ?</a></li>
     </ul>

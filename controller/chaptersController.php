@@ -22,14 +22,14 @@ function addChapter($page, $title, $script)
         if ($addChapter === false) {
             throw new Exception('Impossible d\'ajouter le chapitre !');
         } else {
-            header('Location: index.php?action=chapterView&id='.$firstChapter['id'].';&page=1');
+            header('Location: index.php?action=chapterView&id='.$firstChapter['id'].'&page=1');
         }
     } else {
         $addChapter = $chapterManager->postChapter($page, $title, $script);
         if ($addChapter === false) {
             throw new Exception('Impossible d\'ajouter le chapitre !');
         } else {
-            header('Location: index.php?action=chapterView&id=?;&page='.$page);
+            header('Location: index.php?action=chapterView&id=?&page='.$page);
         }
     }
 }
