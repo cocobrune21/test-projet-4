@@ -17,15 +17,15 @@
     <ul class="pagination">
 
         <?php
-
+             $indexPage = 1;
                             for ($page = 1; $page <= $nbrChapt; ++$page) {
                                 while ($currentPage = $currentChapter->fetch()) {
                                     $page = $currentPage['numChapter']; ?>
 
         <li class="page-item">
-            <a class="page-link"
+            <a class="page-link_back"
                 href="index.php?action=viewEditChapter&id=<?=$currentPage['id']; ?>& page=<?= $page; ?> ">
-                <?= $page; ?></a>
+                <?= $indexPage++; ?></a>
         </li>
         <?php
                                 }
@@ -38,8 +38,7 @@
 <div id="edit">
     <div class="input-group">
         <form class="backEnd" action="index.php?action=editChapter&id=<?= $post['id']; ?>" method="post">
-            <input type="text" class="form-control" id="title" name="title"
-                value="<?= htmlspecialchars($post['title']); ?>">
+            <input type="text" class="form-control" name="title" value="<?= htmlspecialchars($post['title']); ?>">
             <textarea id="script" name="content"><?= nl2br(htmlspecialchars($post['content'])); ?></textarea>
             <div class="editDel">
                 <input type="submit" class="btn btn-primary btn-chat" name="editChapter" value="Modifier">

@@ -21,7 +21,8 @@
     <script src="vendor/tinymce/tinymce/tinymce.min.js"></script>
     <script type="text/javascript">
     tinymce.init({
-        selector: '#script, #scriptEdit, #commentEdit'
+        selector: '#script, #scriptEdit, #commentEdit',
+        mode: 'textareas'
     });
     </script>
 

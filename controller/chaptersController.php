@@ -2,6 +2,7 @@
 
 require_once 'model/Chapter.php';
 require_once 'model/Pagination.php';
+require_once 'model/Comment.php';
 
 function addChapter($page, $title, $script)
 {

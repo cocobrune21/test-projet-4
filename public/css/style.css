@@ -64,17 +64,15 @@ h1 {
     text-align: center;
 }
 
-#home>div>article>p>a {
-    background-color: #681700;
-    color: white;
-    align-self: right;
-}
-
 .startChapter {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #4e4a3f;
     border: 17px solid black;
+}
+
+#home>div>article>p.nav-fluid.startChapter>a {
+    background-color: #681700;
 }
 
 /* chapter view */
@@ -241,6 +239,21 @@ img {
     margin-top: 10px;
 }
 
+/* edit view */
+
+#numChapter {
+    visibility: hidden;
+}
+
+.page-link_back {
+    background-color: none;
+}
+
+.backEnd {
+    width: 95vw;
+    margin-left: 2.5vw;
+}
+
 
 /* commentView */
 
@@ -259,7 +272,7 @@ img {
 }
 
 body>main>div.containerLogAuthor>div>aside>aside>div>h4 {
-    text-decoration: underline overline #FFC312;
+    text-decoration: underline overline #ffc312;
 }
 
 /* login */

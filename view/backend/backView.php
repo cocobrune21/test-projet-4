@@ -21,7 +21,7 @@
                 placeholder="Numéro du chapitre ...">
             <textarea id="script" name="content">Votre texte ici...</textarea>
             <span class="input-group-btn">
-                <input type="submit" class="btn btn-primary" id="btn-chat" value="Poster">
+                <input type="submit" class="btn btn-primary" id="btn-chat" value="Enregistrer">
             </span>
         </form>
     </div>
