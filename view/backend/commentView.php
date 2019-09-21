@@ -7,7 +7,7 @@
         <li><a href="index.php?action=backEnd">Ecrire un nouveau chapitre ?</a></li>
         <li><a href="index.php?action=viewEditChapter&id=1">Modifier un chapitre ?</a></li>
         <li><a href="index.php?action=getAllComment">Accéder aux commentaires ?</a></li>
-        <li><a href="index.php?action=frontView">Retourner sur le site ?</a></li>
+        <li><a href="index.php?action=chapterView&id=12&page=1">Retourner sur le site ?</a></li>
     </ul>
 </div>
 

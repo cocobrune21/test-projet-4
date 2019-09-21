@@ -13,18 +13,19 @@
                     <ul class="pagination">
 
                         <?php
-                            for ($page = 1; $page <= $nbrChapt; ++$page) {
-                                while ($currentPage = $currentChapter->fetch()) {
-                                    $page = $currentPage['numChapter']; ?>
+                            $indexPage = 1;
+                                for ($page = 1; $page <= $nbrChapt; ++$page) {
+                                    while ($currentPage = $currentChapter->fetch()) {
+                                        $page = $currentPage['numChapter']; ?>
 
                         <li class="page-item">
                             <a class="page-link"
                                 href="index.php?action=chapterView&id=<?=$currentPage['id']; ?>& page=<?= $page; ?>">
-                                <?= $page; ?></a>
+                                <?= $indexPage++; ?></a>
                         </li>
                         <?php
-                                }
-                            }?>
+                                    }
+                                }?>
 
                     </ul>
                 </nav>
@@ -51,7 +52,7 @@
                         <div class="row msg_container">
 
                             <?php    while ($comments = $comment->fetch()) {
-                                ?>
+                                    ?>
 
                             <?php
                             try {
@@ -126,7 +127,7 @@
                                 echo 'Erreur : '.$error->getMessage();
                             } ?>
                             <?php
-                            }
+                                }
  $comment->closeCursor();
             ?>
                         </div>
