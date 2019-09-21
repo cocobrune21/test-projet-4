@@ -53,15 +53,14 @@ class Chapter extends Manage
         return $updateChapter;
     }
 
-    public function delateChapter($id)
+    public function delateChapter($idChapter)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('DELETE chapters, comments
-        FROM chapters
-        INNER JOIN comments
-        ON chapters.id = comments.id_comment 
-        WHERE chapters.id=:id');
-        $delateChapter = $req->execute(array('id' => $id));
+        FROM chapters LEFT OUTER JOIN comments
+        ON chapters.id = comments.chapterLink
+        WHERE chapters.id=:idChapter');
+        $delateChapter = $req->execute(array('idChapter' => $idChapter));
 
         return $delateChapter;
     }
