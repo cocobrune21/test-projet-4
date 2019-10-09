@@ -61,6 +61,7 @@
 
                             <div class=" col-md-10 col-xs-10 ">
                                 <div class=" messages msg_sent ">
+
                                     <p>
                                         <?= nl2br(htmlspecialchars($comments['content'])); ?>
                                     </p>

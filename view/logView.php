@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="Connexion" class="btn float-right login_btn">
+                        <input type="submit" value="Connexion" class="btn float-left login_btn">
                     </div>
                 </form>
             </div>
@@ -41,11 +41,11 @@
                 <div class="card-body">
                     <h4>Jean Forteroche</h4>
                     <p class="card-text">Acteur écrivain et aventurier, j'ai décider de mettre en ligne et
-                        de pulier les épisodes de prochain roman au fur et à mesure de leurs rédactions.
-                        Ce nouveau roman est un roman auto-biographique, qui a sa conclusion, je l'espère,
+                        de publier les épisodes de mon prochain roman au fur et à mesure de leurs rédactions.
+                        Ce nouveau roman est un livre auto-biographique, qui à sa conclusion, je l'espère,
                         sauvera
                         le
-                        monde.
+                        monde !
                     </p>
                 </div>
             </aside><!-- End autor -->

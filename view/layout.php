@@ -31,6 +31,8 @@
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <title>Billet simple pour l'Alaska</title>
+    <meta name="description"
+        content="Le nouveau roman de Jean Forteroche, un nouveau chapitre en ligne chaque semaine" />
     <link href="public/css/style.css" rel="stylesheet" />
 
 </head>
@@ -76,9 +78,6 @@
         <section id="slide">
             <div class="jumbotron">
                 <h1>Billet simple pour l'Alaska</h1>
-                <p>
-                    <h3 class="navbar">Un roman de Jean Forteroche</h3>
-                </p>
             </div>
         </section>
 
@@ -90,9 +89,9 @@
     <footer class="nav">
         <div class="container">
             <p class="float-right">
-                <a href="#nav">Remonter en haut de page</a>
+                <a href="#nav">Haut de page</a>
             </p>
-            <p>Footer</p>
+            <p>Copyright 2019 - Mentions Légales</p>
         </div>
     </footer>
 
@@ -106,6 +105,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

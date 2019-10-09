@@ -2,18 +2,21 @@
 
 <div class="adminAutor">
     <h4>Bonjour Jean !</h4>
-    <p>Que souhaitez vous faire aujourd'hui ?</p>
-    <ul>
-        <li><a href="index.php?action=backEnd">Ecrire un nouveau chapitre ?</a></li>
-        <li><a href="#edit">Modifier un chapitre ?</a></li>
-        <li><a href="index.php?action=getAllComment">Accéder aux commentaires ?</a></li>
-        <li><a href="index.php?action=chapterView&id=12&page=1">Retourner sur le site ?</a></li>
-    </ul>
+    <p>
+        <img src=".\public\images\Typewriter.jpg" class="imgTyp">
+    </p>
+    <div class="navAutor">
+        <ul>
+            <li><a href="index.php?action=backEnd">Ecrire un nouveau chapitre ?</a></li>
+            <li><a href="#edit">Modifier un chapitre ?</a></li>
+            <li><a href="index.php?action=getAllComment">Accéder aux commentaires ?</a></li>
+            <li><a href="index.php?action=chapterView&id=13&page=1">Retourner sur le site ?</a></li>
+        </ul>
+    </div>
+    <h5>Modifier un chapitre</h5>
 </div>
 
-<h5>Modifier un chapitre</h5>
-
-<nav aria-label="Navigation chapter" class="nav_chapter">Chapitres
+<nav aria-label="Navigation chapter" class="nav_chapter">
     <ul class="pagination">
 
         <?php
@@ -38,7 +41,8 @@
 <div id="edit">
     <div class="input-group">
         <form class="backEnd" action="index.php?action=editChapter&id=<?= $post['id']; ?>" method="post">
-            <input type="text" class="form-control" name="title" value="<?= htmlspecialchars($post['title']); ?>">
+            <input type="text" class="form-control titleName" name="title"
+                value="<?= htmlspecialchars($post['title']); ?>">
             <textarea id="script" name="content"><?= nl2br(htmlspecialchars($post['content'])); ?></textarea>
             <div class="editDel">
                 <input type="submit" class="btn btn-primary btn-chat" name="editChapter" value="Modifier">

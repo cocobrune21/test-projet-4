@@ -7,7 +7,7 @@ class Comment extends Manage
     public function getAllComments()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, chapterLink, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report 
+        $req = $db->query('SELECT id, id_chapter, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report 
         FROM comments 
         ORDER BY date_comment DESC');
 
@@ -17,7 +17,7 @@ class Comment extends Manage
     public function getOneComment($id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, chapterLink, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report 
+        $req = $db->prepare('SELECT id, id_chapter, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report 
         FROM comments 
         WHERE id= ?');
         $req->execute(array($id));
@@ -29,9 +29,9 @@ class Comment extends Manage
     public function getCommentChapter($postId)
     {
         $db = $this->dbConnect();
-        $comment = $db->prepare('SELECT id, chapterLink, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report 
+        $comment = $db->prepare('SELECT id, id_chapter, autor, content, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, report 
         FROM comments 
-        WHERE chapterLink = ? 
+        WHERE id_chapter = ? 
         ORDER BY date_comment DESC');
         $comment->execute(array($postId));
 
@@ -41,7 +41,7 @@ class Comment extends Manage
     public function postComment($postId, $autor, $content)
     {
         $db = $this->dbConnect();
-        $comment = $db->prepare('INSERT INTO comments(chapterLink, autor, content, date_comment, report) VALUES (?, ?, ?, NOW(),0)');
+        $comment = $db->prepare('INSERT INTO comments(id_chapter, autor, content, date_comment, report) VALUES (?, ?, ?, NOW(),0)');
         $addComment = $comment->execute(array($postId, $autor, $content));
 
         return $addComment;
