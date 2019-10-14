@@ -2,7 +2,6 @@
 
 require_once 'model/Chapter.php';
 require_once 'model/Comment.php';
-require_once 'model/Pagination.php';
 
 function frontView()
 {
@@ -13,9 +12,8 @@ function chapterView()
 {
     $frontChapter = new Chapter();
     $commentManager = new Comment();
-    $pagin = new Pagination();
 
-    $data = $pagin->countPage();
+    $data = $frontChapter->countPage();
     $nbrChapt = $data['nbrChapt'];
 
     $id = $_GET['id'];
@@ -39,9 +37,8 @@ function chapterView()
 function viewEditChapter()
 {
     $backChapter = new Chapter();
-    $pagin = new Pagination();
 
-    $data = $pagin->countPage();
+    $data = $backChapter->countPage();
     $nbrChapt = $data['nbrChapt'];
 
     $post = $backChapter->getChapter($_GET['id']);

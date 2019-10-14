@@ -1,17 +1,15 @@
 <?php
 
 require_once 'model/Chapter.php';
-require_once 'model/Pagination.php';
 require_once 'model/Comment.php';
 
 function addChapter($page, $title, $script)
 {
     $chapterManager = new Chapter();
-    $pageSearch = new Pagination();
 
-    $pageExiste = $pageSearch->searchChapterExiste();
-    $lastPage = $pageSearch->lastChapter();
-    $firstChapter = $pageSearch->firstChapter();
+    $pageExiste = $chapterManager->searchChapterExiste();
+    $lastPage = $chapterManager->lastChapter();
+    $firstChapter = $chapterManager->firstChapter();
 
     $thisPage = $lastPage['numChapter'];
 

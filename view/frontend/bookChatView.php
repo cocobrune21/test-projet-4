@@ -145,8 +145,7 @@
                                 placeholder="Votre message ici..." />
                             <span class="input-group-btn">
                                 <input type="text" class="form-control" id="autor" name="autor"
-                                    value="<?= isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : ''; ?>"
-                                    placeholder="<?= !isset($_SESSION['pseudo']) ? 'Pseudo' : ''; ?>">
+                                    value="<?= isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : 'Pseudo'; ?>">
                                 <input type="submit" class="btn btn-primary" id="btn-chat" value="Envoyer">
                             </span>
                         </form>
