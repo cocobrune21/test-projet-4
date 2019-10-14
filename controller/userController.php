@@ -21,12 +21,14 @@ function addUser($userName, $email, $pseudo, $userPassword)
 {
     $userControl = new User();
 
-    $addUser = $userControl->addUsers($userName, $email, $pseudo, $userPassword);
+    $email = $_POST['email'];
+    $regEx = "#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#";
 
-    if ($addUser === false) {
-        throw new Exception('Impossible de créer votre compte utilisateur !');
-    } else {
+    if (preg_match($regEx, $email)) {
+        $addUser = $userControl->addUsers($userName, $email, $pseudo, $userPassword);
         header('Location: index.php?action=log');
+    } else {
+        require 'view/registrerView.php';
     }
 }
 

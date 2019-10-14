@@ -58,7 +58,7 @@ class Chapter extends Manage
         $db = $this->dbConnect();
         $req = $db->prepare('DELETE chapters, comments
         FROM chapters LEFT OUTER JOIN comments
-        ON chapters.id = comments.chapterLink
+        ON chapters.id = id_chapter
         WHERE chapters.id=:idChapter');
         $delateChapter = $req->execute(array('idChapter' => $idChapter));
 
