@@ -49,8 +49,6 @@ function addComment($postId, $autor, $content)
 {
     $commentManager = new Comment();
 
-    $autor = $_SESSION['pseudo'];
-
     try {
         if (isset($_SESSION['pseudo']) && $_SESSION['password']) {
             $addComment = $commentManager->postComment($postId, $autor, $content);
