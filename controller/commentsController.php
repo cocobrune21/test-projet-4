@@ -2,6 +2,15 @@
 
 require_once 'model/Comment.php';
 
+function viewEditComment()
+{
+    $backComment = new Comment();
+
+    $oneComment = $backComment->getOneComment($_GET['id']);
+
+    require 'view/backend/editComment.php';
+}
+
 function getAllComment()
 {
     $commentManager = new Comment();

@@ -3,6 +3,50 @@
 require_once 'model/Chapter.php';
 require_once 'model/Comment.php';
 
+function frontView()
+{
+    require 'view/frontend/indexView.php';
+}
+
+function chapterView()
+{
+    $frontChapter = new Chapter();
+    $commentManager = new Comment();
+
+    $data = $frontChapter->countPage();
+    $nbrChapt = $data['nbrChapt'];
+
+    $id = $_GET['id'];
+
+    try {
+        if ($id) {
+            $comment = $commentManager->getCommentChapter($id);
+            $oneCommentReport = $commentManager->getOneComment($id);
+            $post = $frontChapter->getChapter($id);
+            $currentChapter = $frontChapter->getChapters();
+
+            require 'view/frontend/bookChatView.php';
+        } else {
+            echo 'RIEN';
+        }
+    } catch (Exception $error) {
+        echo 'Erreur : '.$error->getMessage();
+    }
+}
+
+function viewEditChapter()
+{
+    $backChapter = new Chapter();
+
+    $data = $backChapter->countPage();
+    $nbrChapt = $data['nbrChapt'];
+
+    $post = $backChapter->getChapter($_GET['id']);
+    $currentChapter = $backChapter->getChapters();
+
+    require 'view/backend/editView.php';
+}
+
 function addChapter($page, $title, $script)
 {
     $chapterManager = new Chapter();

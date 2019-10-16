@@ -258,11 +258,13 @@ img {
     border-color: #681700;
 }
 
+
 #autor {
     margin-top: 10px;
 }
 
 /* admin header */
+
 
 .imgTyp {
     width: 25vw;
@@ -366,8 +368,10 @@ textarea {
 }
 
 body>main>div>div>aside>div.card-body>form>div:nth-child(1),
-body>main>div>div>aside>div.card-body>form>div:nth-child(2) {
-    width: 50vw;
+body>main>div>div>aside>div.card-body>form>div:nth-child(2),
+body>main>div>div>aside>div.card-body>form>div:nth-child(3),
+body>main>div>div>aside>div.card-body>form>div:nth-child(4) {
+    width: 70vw;
 }
 
 .separate {
@@ -438,6 +442,10 @@ input:focus {
     background-color: white;
 }
 
+body>main>div>div>aside>div.card-footer>div {
+    flex-direction: column;
+}
+
 .links {
     color: white;
 }
@@ -449,6 +457,7 @@ input:focus {
     border: 2px solid #FFC312;
     border-radius: 5px;
     padding: 2px 5px 2px 5px;
+    width: 33vw;
 }
 
 body>main>div>div>aside>aside>div {
@@ -460,6 +469,7 @@ body>main>div>div>aside>aside>div {
 
 .nav {
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 body>footer {
@@ -498,6 +508,7 @@ body>footer>div>p.float-right>a:hover {
 /* media queries */
 
 @media screen and (max-width: 760px) {
+
     body>main>div:nth-child(3)>div>aside>aside {
         flex-direction: column;
     }
@@ -506,4 +517,18 @@ body>footer>div>p.float-right>a:hover {
         height: 20vw;
     }
 
+}
+
+@media screen and (max-width: 425px) {
+    body>main>div>div>aside>aside {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        padding: 2px;
+    }
+
+    body>header>div>div>div>nav>ul>li {
+        margin-right: 2px;
+    }
 }

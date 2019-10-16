@@ -22,7 +22,6 @@ require_once __DIR__.'/vendor/autoload.php';
 
 require_once 'controller/chaptersController.php';
 require_once 'controller/commentsController.php';
-require_once 'controller/viewController.php';
 require_once 'controller/userController.php';
 
 try {
