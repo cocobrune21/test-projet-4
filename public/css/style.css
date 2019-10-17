@@ -1,4 +1,5 @@
 /* header */
+
 #nav {
     background-color: #681700;
 }
@@ -37,6 +38,8 @@ body>header>div>div>div>nav>ul>li>a:hover {
 
 #slide>div {
     background-color: transparent;
+    padding-bottom: 1.5vw;
+    margin-top: -5vw;
 }
 
 h1 {
@@ -47,6 +50,11 @@ h1 {
 
 
 /* home */
+
+.container {
+    max-width: 99.98vw;
+}
+
 #home {
     background-image: url('../images/Books.jpg');
     background-size: cover;
@@ -234,6 +242,7 @@ img {
     background-color: #681700;
     color: white;
     margin-top: 10px;
+    margin-bottom: 10px;
 
 }
 
@@ -267,7 +276,7 @@ img {
 
 
 .imgTyp {
-    width: 25vw;
+    width: 18vw;
     float: left;
     margin-left: 20vw;
     margin-right: 7vw;
@@ -292,14 +301,13 @@ a:hover {
 }
 
 .titleName {
-    text-align: center;
     font-size: 1.7em;
     text-shadow: 0 5px 5px;
 }
 
 .backEnd {
-    width: 95vw;
-    margin-left: 2.5vw;
+    margin-left: 5vw;
+    width: 90vw;
 }
 
 #document {
@@ -314,19 +322,18 @@ textarea {
     background-color: #681700;
     color: white;
     border: 2px solid #FFC312;
-    margin-left: 10vw;
 }
 
 /* commentView */
 
 .comment {
-    display: flex;
     text-align: justify;
     background-color: #e9ecef;
-    padding: 7vw;
+    padding: 2vw;
     border: 2px solid #681700;
     border-radius: 5px;
-    margin: 2vw;
+    margin: 1vw;
+    margin-top: 2vw;
 }
 
 #manageComment>form:nth-child(2)>input.phantomButtom {
@@ -335,8 +342,11 @@ textarea {
 
 #manageComment {
     display: flex;
-    flex-direction: column;
     width: 250px;
+}
+
+body>main>section:nth-child(3)>div>div {
+    display: block;
 }
 
 #modif,
@@ -345,7 +355,6 @@ textarea {
     background-color: #681700;
     color: white;
     border: 2px solid #FFC312;
-    margin-left: 10vw;
 }
 
 #accept {
@@ -356,6 +365,7 @@ textarea {
 #sup {
     background-color: #333;
     border: 2px solid #FFC312;
+    margin-left: -5vw;
 }
 
 
@@ -371,7 +381,7 @@ body>main>div>div>aside>div.card-body>form>div:nth-child(1),
 body>main>div>div>aside>div.card-body>form>div:nth-child(2),
 body>main>div>div>aside>div.card-body>form>div:nth-child(3),
 body>main>div>div>aside>div.card-body>form>div:nth-child(4) {
-    width: 70vw;
+    width: 51vw;
 }
 
 .separate {
@@ -401,12 +411,19 @@ body>main>div.containerLogAuthor>div>aside>aside>div>h4 {
     background-image: url('../images/Apple.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    margin-left: 2.5vw;
+    margin-top: 2.5vw;
+    margin-bottom: 2.5vw;
+    width: 94vw;
 }
 
 .card-header h5 {
     color: white;
 }
 
+.card-body {
+    margin-left: 80px;
+}
 
 .input-group-prepend span {
     width: 50px;
@@ -444,6 +461,7 @@ input:focus {
 
 body>main>div>div>aside>div.card-footer>div {
     flex-direction: column;
+    margin-left: 2.2vw;
 }
 
 .links {
@@ -451,18 +469,23 @@ body>main>div>div>aside>div.card-footer>div {
 }
 
 .links a {
-    margin-left: 4px;
     color: white;
     background-color: #681700;
     border: 2px solid #FFC312;
     border-radius: 5px;
     padding: 2px 5px 2px 5px;
-    width: 33vw;
+    width: 175px;
+    text-align: center;
+}
+
+body>main>div>div>aside>aside {
+    margin-left: 2.2vw;
 }
 
 body>main>div>div>aside>aside>div {
     color: white;
 }
+
 
 
 /* footer */
@@ -486,6 +509,7 @@ body>footer {
 
 body>footer>div>p.float-right>a {
     color: white;
+    margin-right: 5.2vw;
 }
 
 body>footer>div>p.float-right>a:hover {
@@ -500,9 +524,15 @@ body>footer>div>p.float-right>a:hover {
     color: white;
 }
 
+
 .editDel {
     display: flex;
-    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#write>div {
+    margin-top: 100px;
 }
 
 /* media queries */
@@ -529,6 +559,37 @@ body>footer>div>p.float-right>a:hover {
     }
 
     body>header>div>div>div>nav>ul>li {
-        margin-right: 2px;
+        margin-right: 15px;
+    }
+
+    .comment {
+        display: block;
+    }
+
+    .imgTyp {
+        display: none;
+    }
+
+    h4 {
+        font-size: 2rem;
+    }
+
+    .card-body {
+        margin-left: 0px;
+    }
+
+    body>main>div>div>aside>div.card-body>form>div:nth-child(1),
+    body>main>div>div>aside>div.card-body>form>div:nth-child(2),
+    body>main>div>div>aside>div.card-body>form>div:nth-child(3),
+    body>main>div>div>aside>div.card-body>form>div:nth-child(4) {
+        width: 85vw;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+
+    body>header>div>div>div>nav>ul>li {
+        margin-right: 5px;
     }
 }

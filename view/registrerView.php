@@ -1,14 +1,13 @@
 <?php ob_start();
 ?>
 
-<h5>Vous devez être enregistré et connecté pour poster un commentaire</h5>
 
 <div class="containerInscription containerLogAuthor">
     <div class="row">
         <!-- Start login -->
         <aside class="card col-md-12 login">
             <div class="card-header">
-                <h5 id="connect">S'enregistrer'</h5>
+                <h5 id="connect">S'enregistrer</h5>
             </div>
             <div class="card-body">
                 <form class="backEnd" action="index.php?action=addUser" method="post">
@@ -37,7 +36,7 @@
                         <input type="password" class="form-control" name="userPassword" placeholder="mot de passe">
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Enregistrer" class="btn float-right login_btn">
+                        <input type="submit" value="Enregistrer" class="btn float-left login_btn">
                     </div>
                 </form>
             </div>

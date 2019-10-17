@@ -13,7 +13,6 @@
             <li><a href="index.php?action=chapterView&id=13&page=1">Retourner sur le site </a></li>
         </ul>
     </div>
-
     <h5>Ecrire un nouveau chapitre</h5>
 </div>
 
