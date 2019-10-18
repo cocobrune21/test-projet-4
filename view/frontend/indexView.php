@@ -3,9 +3,9 @@
 
 <!-- home -->
 <section class="container-fluid" id="home">
-    <div class="home" col-lg-12>
+    <div class="home">
         <h2>Prologue</h2>
-        <article class="bookClosed">
+        <div class="bookClosed">
             <p>Plus qu'un simple roman, ce livre est aussi l'aventure d'une vie.
                 <br /> Il est conçu comme un blog, afin que tout le monde puisse s'approprier l'histoire et
                 peut-être également aider Jean Foteroche.
@@ -17,7 +17,7 @@
                 <a href="index.php?action=chapterView&id=13&page=1" class="btn btn-primary">Entrer
                     dans l'aventure</a>
             </p>
-        </article>
+        </div>
     </div>
 </section><!-- end home -->
 

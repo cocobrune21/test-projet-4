@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <!-- Required meta tags -->
@@ -74,7 +74,7 @@
         </div>
     </header>
 
-    <main role="main">
+    <main>
         <section id="slide">
             <div class="jumbotron">
                 <h1>Billet simple pour l'Alaska</h1>

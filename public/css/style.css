@@ -38,8 +38,6 @@ body>header>div>div>div>nav>ul>li>a:hover {
 
 #slide>div {
     background-color: transparent;
-    padding-bottom: 1.5vw;
-    margin-top: -5vw;
 }
 
 h1 {
@@ -80,17 +78,17 @@ h1 {
     margin: 5vw;
 }
 
-#home>div>article>p.nav-fluid.startChapter>a {
+#home>div>div>p.nav-fluid.startChapter>a {
     background-color: #681700;
     margin-bottom: 15vw;
     border: 2px solid #FFC312;
 }
 
-#home>div>article>p.nav-fluid.startChapter>a:hover {
+#home>div>div>p.nav-fluid.startChapter>a:hover {
     background-color: #681700;
 }
 
-#home>div>article>p:nth-child(1) {
+#home>div>div>p:nth-child(1) {
     font-size: 1.3em;
     line-height: inherit;
     text-align: justify;
