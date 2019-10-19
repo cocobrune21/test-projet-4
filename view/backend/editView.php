@@ -47,13 +47,38 @@
             <div class="editDel">
                 <input type="submit" class="btn btn-primary btn-chat" name="editChapter" value="Modifier">
         </form>
-        <form class="backEnd" action="index.php?action=delateChapter&id=<?= $post['id']; ?>" method="post">
-            <input type="submit" class="btn btn-primary btn-chat" name="id" value="Supprimer">
-        </form>
+        <button type="button" lass="btn btn-primary sup" data-toggle="modal" data-target="#exampleModal">
+            Supprimer
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">ATTENTION</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Etes-vous sur de vouloir supprimer ce chapitre ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                        <form class="backEnd" action="index.php?action=delateChapter&id=<?= $post['id']; ?>"
+                            method="post">
+                            <input type="submit" class="btn btn-primary sup" name="id" value="Supprimer">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+</div>
 
-</div>
-</div>
+
+
 
 <?php $content = ob_get_clean(); ?>
 

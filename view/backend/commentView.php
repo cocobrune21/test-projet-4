@@ -45,10 +45,36 @@ while ($data = $allComments->fetch()) {
                         </form>
                         <?php
             } ?>
-                        <form class="backEnd" action="index.php?action=delateComment&id=<?= $data['id']; ?>"
-                            method="post">
-                            <input id="sup" type="submit" class="btn btn-primary" name="id" value="Supprimer">
-                        </form>
+                        <button type="button" id="supComBtn" class="btn btn-primary sup" data-toggle="modal"
+                            data-target="#exampleModal">
+                            Supprimer
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">ATTENTION</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Etes-vous sur de vouloir supprimer ce commentaire?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Retour</button>
+                                        <form class="backEnd"
+                                            action="index.php?action=delateComment&id=<?= $data['id']; ?>"
+                                            method="post">
+                                            <input id="sup" type="submit" class="btn btn-primary" name="id"
+                                                value="Supprimer">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
             </div>

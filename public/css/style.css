@@ -252,7 +252,8 @@ img {
 
 .btn-primary {
     width: 100px;
-    border-color: #FFC312;
+    border: 2px solid #FFC312;
+    border-radius: 2px;
 }
 
 .btn-danger {
@@ -316,10 +317,22 @@ textarea {
     height: 650px;
 }
 
-#edit>div>form>div.editDel>input {
+#edit>div>form>div.editDel>input,
+#moderate>div>form>div.editDel>input {
     background-color: #681700;
     color: white;
     border: 2px solid #FFC312;
+}
+
+#edit>div>form>div.editDel>button,
+#exampleModal>div>div>div.modal-footer>form>input,
+#supComBtn,
+#sup {
+    background-color: #333;
+    border: 2px solid #FFC312;
+    color: white;
+    border-radius: 2px;
+    height: 40px;
 }
 
 /* commentView */
@@ -348,8 +361,7 @@ body>main>section:nth-child(3)>div>div {
 }
 
 #modif,
-#accept,
-#sup {
+#accept {
     background-color: #681700;
     color: white;
     border: 2px solid #FFC312;
@@ -359,13 +371,6 @@ body>main>section:nth-child(3)>div>div {
     background-color: #FFC312;
     border: 2px solid #e9ecef;
 }
-
-#sup {
-    background-color: #333;
-    border: 2px solid #FFC312;
-    margin-left: -5vw;
-}
-
 
 
 /* author */
