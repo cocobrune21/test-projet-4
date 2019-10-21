@@ -275,7 +275,7 @@ img {
 
 
 .imgTyp {
-    width: 18vw;
+    width: 12vw;
     float: left;
     margin-left: 20vw;
     margin-right: 7vw;
@@ -585,8 +585,9 @@ body>footer>div>p.float-right>a:hover {
     body>main>div>div>aside>div.card-body>form>div:nth-child(2),
     body>main>div>div>aside>div.card-body>form>div:nth-child(3),
     body>main>div>div>aside>div.card-body>form>div:nth-child(4) {
-        width: 85vw;
+        width: 53vw;
     }
+
 }
 
 
