@@ -32,16 +32,17 @@ function addUser($userName, $email, $pseudo, $userPassword)
     }
 }
 
-function logUser($name, $password)
+function logUser($pseudo, $userPassword)
 {
     $userControl = new User();
 
-    $user = $userControl->getUser($name);
+    $user = $userControl->getUser($pseudo);
 
-    $isPasswordCorrect = password_verify($password, $user['userPassword']);
+    $postPass = $_POST['password'];
+    $pass = $user['userPassword'];
 
-    try {
-        if ($user) {
+    if ($user) {
+        if (password_verify($postPass, $pass)) {
             $_SESSION['logUser'] = $user['userAdmin'];
             if ($user['userAdmin'] == true) {
                 require 'view/backend/backView.php';
@@ -49,11 +50,16 @@ function logUser($name, $password)
                 header('Location: index.php?action=chapterView&id=13&page=1');
             }
         } else {
-            require 'view/registrerView.php';
+            error();
         }
-    } catch (Exception $error) {
-        echo 'Erreur : '.$error->getMessage();
+    } else {
+        require 'view/registrerView.php';
     }
+}
+
+function error()
+{
+    require 'view/errorView.php';
 }
 
 function logout()

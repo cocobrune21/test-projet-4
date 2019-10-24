@@ -23,7 +23,7 @@
                 placeholder="Titre du chapitre ...">
             <input type="number" class="form-control" id="numChapter" name="numChapter"
                 placeholder="Numéro du chapitre ...">
-            <textarea id="script" name="content">Votre texte ici...</textarea>
+            <textarea id="script" name="content"></textarea>
             <span class="input-group-btn">
                 <input type="submit" class="btn btn-primary" id="btn-chat" value="Enregistrer">
             </span>

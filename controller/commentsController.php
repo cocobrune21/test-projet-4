@@ -53,10 +53,8 @@ function addComment($postId, $autor, $content)
         if (isset($_SESSION['pseudo']) && $_SESSION['password']) {
             $addComment = $commentManager->postComment($postId, $autor, $content);
             header('Location: index.php?action=chapterView&id='.$postId);
-        } elseif (!isset($_SESSION['pseudo']) && !isset($_SESSION['password'])) {
-            require 'view/logView.php';
         } else {
-            throw new Exception('Impossible d\'ajouter le commentaire !');
+            require 'view/logView.php';
         }
     } catch (Exception $error) {
         echo 'Erreur : '.$error->getMessage();

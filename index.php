@@ -34,10 +34,10 @@ try {
                     if ($_POST['content'] != '') {
                         addComment($_GET['id'], $_POST['autor'], $_POST['content']);
                     } else {
-                        throw new Exception('Tous les champs ne sont pas remplis !');
+                        error();
                     }
                 } else {
-                    throw new Exception('Tous les champs ne sont pas remplis !');
+                    error();
                 }
             } else {
                 throw new Exception('Aucun identifiant de billet envoyé');
@@ -55,16 +55,36 @@ try {
         } elseif ($_GET['action'] == 'log') {
             loggin();
         } elseif ($_GET['action'] == 'logUser') {
-            logUser($_POST['pseudo'], $_POST['password']);
+            if (isset($_POST['pseudo']) && isset($_POST['password'])) {
+                if ($_POST['pseudo'] != '') {
+                    if ($_POST['password'] != '') {
+                        logUser($_POST['pseudo'], $_POST['password']);
+                    } else {
+                        error();
+                    }
+                } else {
+                    error();
+                }
+            } else {
+                error();
+            }
         } elseif ($_GET['action'] == 'addUser') {
             addUser($_POST['userName'], $_POST['email'], $_POST['pseudo'], $_POST['userPassword']);
         } elseif ($_GET['action'] == 'logout') {
             logout();
         } elseif ($_GET['action'] == 'addChapter') {
             if (isset($_POST['numChapter']) && isset($_POST['title']) && isset($_POST['content'])) {
-                addChapter($_POST['numChapter'], $_POST['title'], $_POST['content']);
+                if ($_POST['content'] != '') {
+                    if ($_POST['title'] != '') {
+                        addChapter($_POST['numChapter'], $_POST['title'], $_POST['content']);
+                    } else {
+                        error();
+                    }
+                } else {
+                    error();
+                }
             } else {
-                throw new Exception('Vous avez déjà un chapitre a ce numéro !');
+                error();
             }
         } elseif ($_GET['action'] == 'viewEditChapter') {
             viewEditChapter();
@@ -76,7 +96,7 @@ try {
             if (isset($_POST['title']) && isset($_POST['content'])) {
                 editChapter($_GET['id'], $_POST['title'], $_POST['content']);
             } else {
-                throw new Exception('Tous les champs ne sont pas remplis !');
+                error();
             }
         } elseif ($_GET['action'] == 'delateChapter') {
             if (isset($_GET['id']) && $_GET['id'] >= 0) {
@@ -96,7 +116,7 @@ try {
             if (!empty($_POST['content']) && !empty($_POST['autor'])) {
                 editComment($_GET['id'], $_POST['content'], $_POST['autor']);
             } else {
-                throw new Exception('Tous les champs ne sont pas remplis !');
+                error();
             }
         } elseif ($_GET['action'] == 'delateComment') {
             if (isset($_GET['id']) && $_GET['id'] >= 0) {
